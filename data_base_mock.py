@@ -1,34 +1,7 @@
-from Model.product import Product
+import json
 
 
 def get_products():
-    yield Product(
-        0,
-        "../static/img/roll/philadelphia.jpg",
-        "Филадельфия хит ролл",
-        "6 шт.",
-        "180г.",
-        "300 ₽",
-        0
-    )
-
-    yield Product(
-        0,
-        "../static/img/roll/philadelphia.jpg",
-        "Филадельфия хит ролл",
-        "6 шт.",
-        "180г.",
-        "300 ₽",
-        0
-    )
-
-    yield Product(
-        0,
-        "../static/img/roll/philadelphia.jpg",
-        "Филадельфия хит ролл",
-        "6 шт.",
-        "180г.",
-        "300 ₽",
-        0
-    )
-
+    with open("./products.json", encoding='utf-8') as json_file:
+        data = json.load(json_file)
+        return data

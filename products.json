@@ -1,0 +1,32 @@
+[
+	{
+		"id": 1,
+		"title": "Питон",
+		"price": 300,
+		"imgSrc": "python.jpg"
+	},
+	{
+		"id": 2,
+		"title": "Оси",
+		"price": 250,
+		"imgSrc": "osi.jpg"
+	},
+	{
+		"id": 3,
+		"title": "Физкультура",
+		"price": 230,
+		"imgSrc": "fizra.jpg"
+	},
+	{
+		"id": 4,
+		"title": "Сети",
+		"price": 320,
+		"imgSrc": "seti.jpg"
+	},
+	{
+		"id": 5,
+		"title": "Дискретка по скидке",
+		"price": 100,
+		"imgSrc": "Шур_ДМ.jpg"
+	}
+]
