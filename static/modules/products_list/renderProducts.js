@@ -1,10 +1,12 @@
-const productsContainer = document.querySelector('#products-container');
+// const productsContainer = document.querySelector('#products-container');
+let productsContainer = document.getElementById("products-container")
 
 // Запускаем getProducts
-getProducts();
+
 
 // Асинхронная функция получения данных из файла products.json
 async function getProducts() {
+    productsContainer = document.getElementById("products-container")
 	// Получаем данные из products.json
     // fetch("http://127.0.0.1:5000/get_products", {headers: {"products_count": 2}})
     // fetch('./static/js/products.json')
@@ -12,14 +14,12 @@ async function getProducts() {
     // Парсим данные из JSON формата в JS
     const productsArray = await response.json();
     // Запускаем ф-ю рендера (отображения товаров)
-    console.log(Object.keys(productsArray));
 	renderProducts(productsArray);
 }
 
 function renderProducts(productsArray) {
     Object.keys(productsArray).forEach(function (key) {
         let item = productsArray[key];
-        console.log(item)
         const productHTML = `<div class="col-md-6">
 						<div class="card mb-4" data-id="${item.id}">
 							<img class="product-img" src="../static/img/homeworks/${item.imgSrc}" alt="">

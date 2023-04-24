@@ -11,84 +11,26 @@
 </head>
 
 <body>
-
-	<header class="header">
-		<div class="container text-center">
-			<img class="logo" src="../static/img/logo/logo.jpg" width="92" alt="Суши и пицца">
-			<div class="site-title">Быстрое гдз</div>
-		</div>
-	</header>
-
 	<div class="container mb-5">
-		<div class="row">
-
-			<!-- Товары -->
-			<div class="col-md-8">
-				<div class="row" id="products-container">
-
-				</div>
-			</div>
-
-			<!-- Корзина -->
-			<div class="col-md-4">
-
-				<!-- Корзина -->
-				<div class="card mb-4">
-					<div class="card-body">
-						<h4 class="card-title">Ваш заказ</h4>
-
-							<div data-cart-empty class="alert alert-secondary" role="alert">
-							Корзина пуста
-						</div>
-
-						<!-- cart-wrapper -->
-						<div class="cart-wrapper">
-
-						</div>
-						<!-- // cart-wrapper -->
-
-						<!-- Стоимость заказа -->
-						<div class="cart-total">
-							<p data-cart-delivery class="none">
-								<span class="h5">Доставка:</span>
-								<span class="delivery-cost">250 ₽</span><br>
-								<span class="small">Бесплатно при заказе от 600 ₽</span>
-							</p>
-							<p><span class="h5">Итого:</span>
-								<span class="total-price">0</span>
-								<span class="rouble">₽</span></p>
-						</div>
-						<!-- // Стоимость заказа -->
-
-					</div>
-
-					<!-- Оформить заказ -->
-					<div id="order-form" class="card-body border-top none">
-						<h4 class="card-title">Оформить заказ</h4>
-						<form>
-							<div class="form-group">
-								<input type="text" class="form-control" placeholder="Ваш номер телефона">
-							</div>
-							<button type="submit" class="btn btn-primary">Заказать</button>
-						</form>
-					</div>
-					<!-- // Оформить заказ -->
-
-				</div>
-				<!-- // Корзина -->
-
-			</div>
+		<div class="row" id="main-container">
 
 		</div>
 	</div>
 
 	<!-- Подключаем скрипты -->
+		<script src="../static/modules/header/index.js"></script>
+		<script src="../static/modules/products_list/index.js"></script>
+		<script src="../static/modules/cart/index.js"></script>
+		<script src="../static/modules/products_list/renderProducts.js"></script>
+		<script src="../static/pages/main/index.js"></script>
 
-	<script src="../static/js/renderProducts.js"></script>
-	<script src="../static/js/calcCartPrice.js"></script>
-	<script src="../static/js/toggleCartStatus.js"></script>
-	<script src="../static/js/counter.js"></script>
-	<script src="../static/js/cart.js"></script>
+
+		<script src="../static/modules/cart/calcCartPrice.js"></script>
+		<script src="../static/modules/cart/toggleCartStatus.js"></script>
+		<script src="../static/modules/cart/counter.js"></script>
+		<script src="../static/modules/cart/cart.js"></script>
+
+
 
 </body>
 </html>
