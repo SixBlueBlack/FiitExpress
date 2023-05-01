@@ -1,13 +1,20 @@
-// Div внутри корзины, в который мы добавляем товары
-const cartWrapper =  document.querySelector('.cart-wrapper');
+
 
 // Отслеживаем клик на странице
 window.addEventListener('click', function (event) {
+	// Div внутри корзины, в который мы добавляем товары
+const cartWrapper =  document.querySelector('.cart-wrapper');
+
 	// Проверяем что клик был совершен по кнопке "Добавить в корзину"
 	if (event.target.hasAttribute('data-cart')) {
+		console.log("Нажата")
+
+		console.log(cartWrapper)
 
 		// Находим карточку с товаром, внутри котрой был совершен клик
 		const card = event.target.closest('.card');
+
+
 
 		// Собираем данные с этого товара и записываем их в единый объект productInfo
 		const productInfo = {
@@ -17,6 +24,8 @@ window.addEventListener('click', function (event) {
 			price: card.querySelector('.price__currency').innerText,
 			counter: card.querySelector('[data-counter]').innerText,
 		};
+
+		console.log(productInfo);
 
 		// Проверять если ли уже такой товар в корзине
 		const itemInCart = cartWrapper.querySelector(`[data-id="${productInfo.id}"]`);

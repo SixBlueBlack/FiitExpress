@@ -16,3 +16,11 @@
 .header-label{
     color: antiquewhite;
 }
+
+.auth-item{
+    display: inline;
+    background-color: #27729D;
+    height: 60px;
+
+    border: wheat;
+}
