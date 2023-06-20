@@ -45,10 +45,6 @@ def cart():
     return render_template('cart.html')
 
 
-@app.route('/get_products')
-def get_products():
-    return productsDp.get_all()
-
 
 @app.route('/product/<product_id>')
 def product(product_id):
@@ -89,6 +85,11 @@ def login_api():
     return {"success": success}
 
 
+@app.route('/api/get_products')
+def get_products():
+    return productsDp.get_all()
+
+
 @app.route('/api/register')
 def register_api():
     return "Not implemented"
@@ -106,13 +107,13 @@ def create_product_api():
 
 
 @app.route('/api/get_user_info')
-def get_user_info():
+def get_user_info_api():
     user = flask_login.current_user
     return flask_login.current_user.json
 
 
 @app.route('/api/update_user_info', methods=['POST'])
-def update_user_info():
+def update_user_info_api():
     data = request.data
     print(data)
     return

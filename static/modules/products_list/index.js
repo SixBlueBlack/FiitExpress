@@ -14,6 +14,6 @@ async function ProductsList(params) {
 }
 
 async function getProducts() {
-    const response = await fetch("http://127.0.0.1:5000/get_products");
+    const response = await fetch("http://127.0.0.1:5000/api/get_products");
     return await response.json();
 }
