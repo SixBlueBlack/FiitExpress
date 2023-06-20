@@ -1,0 +1,148 @@
+form{
+    background-color: #dddddd;
+    height: 100%;
+    margin: 0;
+}
+.reg-form{
+    height: 100%;
+    padding: 0;
+    margin: 0;
+    background-color: yellow;
+    width: 100%;
+}
+
+/*body {*/
+/*    font-family: 'Poppins', sans-serif;*/
+/*    background-color: black;*/
+/*}*/
+
+* {
+    box-sizing: border-box;
+}
+
+.container {
+    padding-top: 50px;
+    padding: 16px;
+    background-color: white;
+    max-width: 530px;
+    margin-left: auto;
+    margin-right: auto;
+;
+}
+
+input[type=text], input[type=password], textarea {
+    width: 100%;
+    padding: 15px;
+    margin: 5px 0 22px 0;
+    display: inline-block;
+    border: none;
+    background: #f1f1f1;
+}
+
+
+textarea{
+    max-width: 100%;
+    min-width: 100%;
+    min-height: 200px;
+    font-family: 'Poppins', sans-serif;
+}
+
+
+input[type=text]:focus, input[type=password]:focus {
+    background-color: #ddd;
+    outline: none;
+}
+
+hr {
+    border: 1px solid #f1f1f1;
+    margin-bottom: 25px;
+}
+
+.registerbtn {
+    background-color: black;
+    color: white;
+    padding: 16px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    opacity: 0.9;
+}
+
+.registerbtn:hover {
+    opacity: 1;
+}
+
+a {
+    color: dodgerblue;
+}
+
+.signin {
+    background-color: #f1f1f1;
+    text-align: center;
+}
+
+.input-file {
+    position: relative;
+    display: inline-block;
+    width: 100%;
+    margin-bottom: 20px;
+}
+.input-file-text {
+    padding: 0 10px;
+    line-height: 40px;
+    text-align: left;
+    height: 40px;
+    display: block;
+    float: left;
+    box-sizing: border-box;
+    width: 353px;
+    border-radius: 6px 0px 0 6px;
+    border: 1px solid #ddd;
+}
+.input-file-btn {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+    outline: none;
+    text-decoration: none;
+    font-size: 14px;
+    vertical-align: middle;
+    color: rgb(255 255 255);
+    text-align: center;
+    border-radius: 0 4px 4px 0;
+    background-color: #000;
+    line-height: 22px;
+    height: 40px;
+    padding: 10px 20px;
+    box-sizing: border-box;
+    border: none;
+    margin: 0;
+    transition: background-color 0.2s;
+}
+.input-file input[type=file] {
+    position: absolute;
+    z-index: -1;
+    opacity: 0;
+    display: block;
+    width: 0;
+    height: 0;
+}
+
+/* Focus */
+.input-file input[type=file]:focus + .input-file-btn {
+    box-shadow: 0 0 0 0.2rem rgba(0,123,255,.25);
+}
+
+/* Hover/active */
+.input-file:hover .input-file-btn {
+    background-color: #000000;
+}
+.input-file:active .input-file-btn {
+    background-color: #000;
+}
+
+/* Disabled */
+.input-file input[type=file]:disabled + .input-file-btn {
+    background-color: #eee;
+}

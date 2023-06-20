@@ -12,6 +12,12 @@ class Products:
     def get_all(self):
         return self.data
 
+    def get_by_id(self, id):
+        try:
+            return self.data[int(id) - 1]
+        except:
+            return None
+
 
 class UserCommon:
     def __init__(self, login='anonymus', password='anonymus'):

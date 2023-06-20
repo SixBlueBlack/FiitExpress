@@ -1,0 +1,239 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+/*body {*/
+/*    display: flex;*/
+/*    padding: 30px 30px;*/
+/*}*/
+
+.catalog-wrapper {
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+    align-content: center;
+}
+
+._title{
+    font-weight: 700;
+    line-height: 120%;
+    text-align: center;
+}
+
+.products{
+    padding-bottom: 44px;
+}
+.products__title {
+    margin: 0 0 calc(32px/40 * 1em) 0;
+}
+
+.products__items {
+    display: grid;
+    gap: 32px;
+    grid-template-columns: repeat(auto-fit, minmax(285px, 1fr));
+}
+
+.products_footer{
+    padding: 32px 0 0 0;
+    text-align: center;
+}
+
+.products__more {
+    border: 1px solid rgb(253, 163, 0);
+    min-width: 245px;
+}
+
+.item-product {
+    background: #f4f5f7;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+@media (any-hover: hover) {
+    .item-product:hover .item-product__actions{
+        opacity: 1;
+        visibility: visible;
+    }
+}
+
+.item-product__labels {
+    position: absolute;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    right: 24px;
+    top: 24px;
+}
+
+.item-product__label {
+    flex: 0 0 48px;
+    width: 48px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    font-weight: 500;
+}
+
+.item-product__label:not:last-child {
+    margin: 0 0 10px 0;
+}
+
+.item-product__label_sale {
+    background: #e97171;
+}
+
+.item-product__label_new {
+    background: #2ec1ac;
+}
+
+.item-product__image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.item-product__image {
+    padding: 0 0 calc(301px/285 * 100%) 0;
+}
+
+.item-product__body {
+    flex: 1 1 auto;
+    padding: 16px 16px 30px 16px;
+    display: flex;
+    flex-direction: column;
+}
+
+.item-product__content {
+    flex: 1 1 auto;
+}
+
+.item-product__title {
+    font-size: 24px;
+    font-weight: 600;
+    line-height: 120%;
+    margin: 0 0 calc(8px/24 * 1em) 0;
+}
+
+.item-product__text {
+    color: gray;
+    line-height: 150%;
+    margin: 0 0 calc(8px/24 * 1em) 0;
+}
+
+.item-product__prices {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    line-height: 150%;
+}
+
+.item-product__price {
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.item-product__price_old {
+    text-decoration: line-through;
+    text-decoration-color: darkgray;
+    font-size: 16px;
+    font-weight: normal;
+    margin: 0 0 0 16px;
+    color: darkgray;
+}
+
+@media (any-hover: none) {
+    .item-product__actions {
+        padding: 15px 0 0 0;
+    }
+}
+
+@media (any-hover: hover) {
+    .item-product__actions {
+        opacity: 0;
+        visibility: hidden;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transition: all 0.3s ease 0s;
+        background: rgba(58, 58, 58, 0.5);
+        z-index: 3;
+    }
+}
+
+
+.actions-product .actions-product__body{
+    margin-top: 20px;
+}
+
+.btn {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 10px;
+    text-align: center;
+    transition: all 0.3s ease 0s;
+    min-height: 48px;
+}
+
+.btn_white {
+    color: rgb(253, 163, 0);
+    background: #fff;
+}
+
+.btn_white:hover {
+    color: #fff;
+    background: rgb(253, 163, 0);
+}
+
+
+.actions-product .actions-product__body button {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 10px;
+    text-align: center;
+    transition: all 0.3s ease 0s;
+    min-height: 48px;
+
+    width: 100%;
+    border: 0;
+    border-radius: 7px;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    outline: none;
+    text-transform: uppercase;
+}
+
+.actions-product__body button:first-child {
+    color: rgb(253, 163, 0);
+    background: #fff;
+}
+
+button:first-child:hover{
+    color: #fff;
+    background: rgb(253, 163, 0);
+}
+
+.actions-product__body button:last-child {
+    color: #fff;
+    background: rgb(253, 163, 0);
+}
+
+button:last-child:hover{
+    background: rgb(255, 214, 69);
+    border-color: rgb(255, 214, 69);
+}

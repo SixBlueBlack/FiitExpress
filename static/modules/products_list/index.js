@@ -1,18 +1,16 @@
 async function ProductsList(params) {
-    let productsListNode = document.createElement('div');
-    productsListNode.className = "col-md-8 row";
-
-
+    let div = document.createElement('div');
+    div.className = "products__items";
 
     let productsArray = await getProducts();
 
 
     Object.keys(productsArray).forEach(function (key) {
         let item = productsArray[key];
-        productsListNode.append(productHTML(item));
+        div.append(ProductsListItem(item));
     });
 
-    return productsListNode
+    return div
 }
 
 async function getProducts() {
