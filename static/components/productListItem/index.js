@@ -9,7 +9,7 @@ function ProductsListItem(item){
                 <div class="item-product__label item-product__label_new">New</div>
               </div>
               <div class="item-product__image _ibg">
-                <img src="../static/img/homeworks/${item.imgSrc}" alt="" >
+                <img class="product-img" src="../static/img/homeworks/${item.imgSrc}" alt="" >
               </div>
               <div class="item-product__body">
                 <div class="item-product__content">
@@ -23,7 +23,7 @@ function ProductsListItem(item){
                 <div class="item-product__actions actions-product">
                   <div class="actions-product__body">
                   <a href="/product/${item.id}"><button>Подробнее</button></a>
-                    <button>В корзину</button>
+                    <button data-cart type="button" class="btn btn-block btn-outline-warning">в корзину
                   </div>
                 </div>
               </div>`

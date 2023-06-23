@@ -1,6 +1,6 @@
 function cartItemHTML(productInfo) {
     let div = document.createElement('div');
-    div.innerHTML = `<div class="cart-item" data-id="${productInfo.id}">
+    div.innerHTML = `<div class="cart-item" data-title="${productInfo.title}">
 								<div class="cart-item__top">
 									<div class="cart-item__img">
 										<img src="${productInfo.imgSrc}" alt="${productInfo.title}">
