@@ -109,7 +109,7 @@ def create_product_api():
 
 @app.route('/api/get_user_info')
 def get_user_info_api():
-    return flask_login.current_user.data
+    return flask_login.current_user.json
 
 
 @app.route('/api/update_user_info', methods=['POST'])
