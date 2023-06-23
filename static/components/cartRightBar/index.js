@@ -4,7 +4,9 @@ function CartRightBar(){
     div.innerHTML = `
     <link rel="stylesheet" href="../static/components/cartRightBar/style.css">
     <div class="cart_counter">Товары, 1 шт.</div>
-        <p><span>Итог: </span><span>250₽</span></p>
+        <p><span>Итого:</span>
+                <span class="total-price">0</span>
+                <span class="rouble">₽</span></p>
 
         <a href=""><i class="fa fa-shopping_cart"></i>Оформить</a>
     `
