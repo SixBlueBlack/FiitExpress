@@ -74,13 +74,14 @@ def load_user(user_id):
 def login_api():
     # data = json.dumps(request.data)
     flogin = json.loads(request.data)['login']
+    print(flogin)
     fpassword = json.loads(request.data)['password']
 
     success = False
     if flogin and fpassword:
         user = usersDb.get_by_login(flogin)
         if user and user.check_password(fpassword):
-            login_user(user)
+            login_user(user, remember=True)
             success = True
     return {"success": success}
 
@@ -108,15 +109,13 @@ def create_product_api():
 
 @app.route('/api/get_user_info')
 def get_user_info_api():
-    user = flask_login.current_user
-    return flask_login.current_user.json
+    return flask_login.current_user.data
 
 
 @app.route('/api/update_user_info', methods=['POST'])
 def update_user_info_api():
-    data = request.data
-    print(data)
-    return
+    flask_login.current_user.data = request.data
+    return ""
 
 
 if __name__ == '__main__':
