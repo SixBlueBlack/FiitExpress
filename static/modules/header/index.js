@@ -26,8 +26,8 @@ async function Header() {
 
                 <nav id="nav" class="nav">
                     <ul class="nav-list" >
-                        <li class="nav-item"><form>
-                            <input type="text" placeholder="Искать здесь...">
+                        <li class="nav-item"><form class="search">
+                            <input  type="text" placeholder="Искать здесь...">
                             <button type="submit">Искать</button>
                         </form>
                         </li>
