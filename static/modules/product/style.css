@@ -1,0 +1,99 @@
+body{
+    font-family: 'Poppins', sans-serif;
+}
+
+
+.container{
+    text-align: center;
+}
+.item-card{
+    width: 100%;
+    max-width: 1230px;
+    display: inline-flex;
+    margin-left: auto;
+    margin-right: auto;
+
+}
+.item-image{
+
+    width: 50%;
+    margin: auto;
+}
+.item-image img{
+    width: 100%;
+}
+.title h2{
+    font-size: 32px;
+}
+.info{
+    text-align: left;
+    width: 50%;
+    padding: 50px;
+    padding-top: 20px;
+    display: flex;
+    flex-direction: column;
+}
+.description{
+    max-width: 500px;
+}
+
+.add-to-basket{
+    margin-top: 20%;
+    display: flex;
+}
+
+.coast{
+    font-size: 35px;
+    margin: 0;
+    padding-bottom: 5px;
+    margin-top: 5px;
+}
+.btn {
+    display: inline-block;
+    padding: 8px 22px;
+    margin-left: 50px;
+    background-color: #070707;
+    border-radius: 40px;
+
+    height: 46px;
+    margin-top: auto;
+    margin-bottom: auto;
+    text-decoration: none;
+    font-size: 18px;
+    color: #fff;
+
+
+    transition: background-color 0.2s ease-in, top 0.2s ease-in;
+}
+
+.btn:hover, .btn:focus {
+    background-color: #323232;
+}
+
+.btn:active {
+    position: relative;
+    top: 1px;
+    background-color: #000000;
+}
+@media (max-width: 800px) {
+    .item-card{
+        flex-direction: column;
+    }
+    .add-to-basket{
+        flex-direction: column;
+    }
+    .btn{
+        padding: 24px 15px;
+        font-size: 10px;
+        text-align: center;
+    }
+}
+
+
+@media (max-width: 1080px) {
+    .btn{
+        padding: 10px 15px;
+        font-size: 13px;
+        text-align: center;
+    }
+}
