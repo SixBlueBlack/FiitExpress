@@ -7,7 +7,7 @@ async function IndexBlock(){
 
                 <div class="header-content" data-aos="fade-up">
                     <h1 class="header-heading">FIIT Express<br>Учебная платформа</h1>
-                    <p>Учись чему-то новому или делись знаними с другими, а мы поможем! <br> Сайт для репетиторов и учеников</p>
+                    <p>Учись чему-то новому или делись знаниями с другими, а мы поможем! <br> Сайт для репетиторов и учеников</p>
                 </div>
 
                 <div class="header-img" data-aos="fade-left">
