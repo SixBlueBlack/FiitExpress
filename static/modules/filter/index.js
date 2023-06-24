@@ -7,6 +7,7 @@ function Filter(){
     <link rel="stylesheet" href="../static/modules/filter/filter_style.css">
     <link rel="stylesheet" href="../static/modules/filter/mobiscroll.javascript.min.css">
 
+
       <div class="sort">
         <div class="sort-item">
           <span class="sort-item_title">Упорядочить:</span>
