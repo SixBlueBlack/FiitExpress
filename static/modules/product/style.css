@@ -15,7 +15,6 @@ body{
 
 }
 .item-image{
-
     width: 50%;
     margin: auto;
 }
@@ -33,6 +32,7 @@ body{
     display: flex;
     flex-direction: column;
 }
+
 .description{
     max-width: 500px;
 }
@@ -40,6 +40,7 @@ body{
 .add-to-basket{
     margin-top: 20%;
     display: flex;
+
 }
 
 .coast{
@@ -78,14 +79,24 @@ body{
 @media (max-width: 800px) {
     .item-card{
         flex-direction: column;
+        align-items: center;
+    }
+    .info{
+        align-items: center;
+        width: 80%;
     }
     .add-to-basket{
         flex-direction: column;
+        align-items: center;
     }
     .btn{
+        margin: 0;
         padding: 24px 15px;
         font-size: 10px;
         text-align: center;
+    }
+    .item-image{
+        width: 80%;
     }
 }
 
