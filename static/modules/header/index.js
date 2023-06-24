@@ -25,7 +25,7 @@ async function Header() {
                 <a href="/" class="logo">FIIT Express</a>
 
                 <nav id="nav" class="nav">
-                    <ul class="nav-list">
+                    <ul class="nav-list" >
                         <li class="nav-item"><form>
                             <input type="text" placeholder="Искать здесь...">
                             <button type="submit">Искать</button>
@@ -34,9 +34,10 @@ async function Header() {
                         <li class="nav-item"><a href="/products" class="nav-link">Все задачи</a></li>
 <!--                        <li class="nav-item"><a href="/" class="nav-link">Репетиторы</a></li>-->
                         <li class="nav-item"><a href="/create_product" class="nav-link">+Создать товар</a></li>
+                        ${await getAuthBlock()}  
                         </ul>
                         
-                        ${await getAuthBlock()}                   
+                                       
                     <button id="nav-btn" class="nav-button">
                         <img id="nav-btn-img" src="../static/modules/header/img/icons/nav-open.svg" alt="Nav button">
                     </button>
@@ -50,26 +51,26 @@ async function getAuthBlock(){
         let userInfo = await getUserInfo()
         if(userInfo['is_anonymous'] === false)
                 return `
-                 <ul class="nav-list">
+                 
                         <li class="nav-item"><a href="/cart" class="nav-link">
-                            <img id="basket-icon" src="../static/modules/header/img/icons/basket.svg" alt="Корзина">
+                            <img id="basket-icon" src="../../static/img/icons/basket.svg" alt="Корзина">
                             </a>
                         </li>
                         <li class="nav-item"><a href="#!" class="nav-link">${userInfo['login']}</a></li>
                         <li class="nav-item">
                         <a onclick="Logout()" class="nav-link">
-                            <img id="logout-icon" src="../static/modules/header/img/icons/logout.svg" alt="Выход"></a>
+                            <img id="logout-icon" src="../../static/img/icons/logout.svg" alt="Выход"></a>
                         </li>
-                    </ul>`
+                    `
         else return `
-                 <ul class="nav-list">
+                
                         <li class="nav-item"><a href="/" class="nav-link">
 
                         </li>
                         <li class="nav-item"><a href="/login" class="nav-link">Вход</a></li>
                         <li class="nav-item"><a href="/register" class="nav-link">Регистрация</a>
                         </li>
-                    </ul>`
+                    `
 }
 
 async function getUserInfo(){

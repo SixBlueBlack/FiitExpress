@@ -6,7 +6,7 @@ function CartItem() {
           <img src="https://clever-lady.ru/wp-content/uploads/2023/01/stay-home-5205390_19.png" alt="">
           <div class="cart_content">
             <h3>Задачи по матану</h3>
-            <div class="cart_content__price ">250₽</div>
+            <div class="cart_content__price ">20₽</div>
             <div class="cart_content__price cart_content__price_old">350₽</div>
 
 
