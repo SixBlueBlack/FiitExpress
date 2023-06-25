@@ -19,11 +19,13 @@ function RegisterForm() {
     <hr>
 
     <button type="button" class="registerbtn" onclick="Register()">Вход</button>
-  </div>
 
-  <div class="container signin">
+    <div class="container signin">
     <p>Уже есть аккаунт? <a class="al" href="/register">Вход</a>.</p>
   </div>
+  </div>
+
+  
 
 
 </form>

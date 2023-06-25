@@ -60,7 +60,7 @@ img, svg {
 
 /* Form */
 
-.search input, textarea, button, select {
+.search input, textarea, button{
 	font-family: inherit;
     font-size: inherit;
     color: inherit;

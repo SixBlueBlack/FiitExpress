@@ -18,11 +18,13 @@ function LoginForm() {
     <hr>
 
     <button type="button" class="registerbtn" onclick="Login()">Вход</button>
-  </div>
-
+  
   <div class="container signin">
     <p>Нет аккаунта? <a class="al" href="/register">Регистрация</a>.</p>
   </div>
+  </div>
+
+  
   </div>
 
  

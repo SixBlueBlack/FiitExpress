@@ -58,6 +58,9 @@ form .container textarea{
     min-width: 100%;
     min-height: 200px;
     font-family: 'Poppins', sans-serif;
+    display: inline-block;
+    border: none;
+    background: #f1f1f1;
 }
 
 
