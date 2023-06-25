@@ -16,6 +16,9 @@ function RegisterForm() {
     <input class="input" type="text" placeholder="Ваша почта" name="mail" required>
     
     <label for="psw"><b>Пароль</b></label>
+    <input class="input" type="password" placeholder="Повтор пароля" name="password" required>
+    
+    <label for="psw"><b>Повтор пароля</b></label>
     <input class="input" type="password" placeholder="Повтор пароля" name="confirmPassword" required>
 
     <input class="input" type="checkbox" checked id="rememberMe"><label>Запомнить меня</label>

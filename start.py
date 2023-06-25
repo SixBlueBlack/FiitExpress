@@ -187,7 +187,7 @@ def create_product_api():
 
     if title and price and category and description:
         print(title, price, category, picture_path, description)
-        productsDp.create_product(title, price, category, picture_path, description)
+        productsDp.create_product(title, price, category, picture_path, description, author)
         return {"success": True}
     else:
         return {"success": False, "error": "Не все поля заполнены"}
