@@ -3,7 +3,8 @@ async function Footer() {
     let footer = document.createElement('footer');
     footer.className = "contacts";
     footer.innerHTML = `
-        <link rel="stylesheet" href="../static/modules/footer/main.css">
+        <link rel="stylesheet" href="../static/modules/header/main.css">
+        <link rel="stylesheet" href="../static/modules/header/media.css">
         <div class="container">
             <div class="contacts-title">
                 <h2 class="title-1">Контакты</h2>
