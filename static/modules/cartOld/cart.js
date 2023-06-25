@@ -1,5 +1,4 @@
 window.addEventListener('click', async function (event) {
-	const cartWrapper = document.querySelector('.cart-wrapper');
 
 	if (event.target.hasAttribute('data-cart')) {
 		const card = event.target.closest('.item-product');
