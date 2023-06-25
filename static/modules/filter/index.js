@@ -20,25 +20,25 @@ function Filter(){
 
         <ul class="options">
           <li class="option">
-                <span class="option-text">
+                <span class="option-text" onclick="ReSortProductsList('alphaAsc')">
                     <span class="sort-action_name">по названию</span>
                     <span class="sort-action_description">А→Я</span>
                 </span>
           </li>
           <li class="option">
-                <span class="option-text">
+                <span class="option-text" onclick="ReSortProductsList('alphaDesc')">
                     <span class="sort-action_name">по названию</span>
                     <span class="sort-action_description">Я→А</span>
                 </span>
           </li>
           <li class="option">
-                <span class="option-text">
+                <span class="option-text" onclick="ReSortProductsList('priceAsc')">
                     <span class="sort-action_name">по цене</span>
                     <span class="sort-action_description">по возрастанию</span>
                 </span>
           </li>
           <li class="option">
-                <span class="option-text">
+                <span class="option-text" onclick="ReSortProductsList('priceDesc')">
                     <span class="sort-action_name">по цене</span>
                     <span class="sort-action_description">по убыванию</span>
                 </span>
