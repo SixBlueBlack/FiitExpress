@@ -1,4 +1,4 @@
-console.log(1)
+
 async function Footer() {
     let footer = document.createElement('footer');
     footer.className = "contacts";
@@ -13,7 +13,7 @@ async function Footer() {
                 <p>Хотите узнать больше или связаться с нами?<br> Вам всегда рады!</p>
             </div>
             <div class="contacts-button" data-aos="fade-down">
-                <a href="#!" class="btn">Написать</a>
+                <a href="https://t.me/Orange_vi_Britannia" class="btn">Написать</a>
             </div>
 
         </div>`
