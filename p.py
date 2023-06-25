@@ -2,7 +2,7 @@ from sqlalchemy import create_engine, Column, Integer, String, select, update
 from sqlalchemy.orm import declarative_base, Session
 from typing import List
 
-engine = create_engine('postgresql://postgres:12qwaszx3edc@localhost/fiitexpressdb1')
+engine = create_engine('postgresql://postgres:postgres@localhost/fiitexpressdb1')
 engine.connect()
 Base = declarative_base()
 session = Session(engine)
@@ -93,10 +93,10 @@ if __name__ == "__main__":
     drop_users()
     Base.metadata.create_all(engine)
     addProduct("Питон", 300, "Программирование", "python.jpg", "admin", "Pythonчик")
-    addProduct("Оси", 250, "Компьютерные науки", "osi.jpg", "admin")
-    addProduct("Физкультура", 230, "Прочие предметы", "fizra.jpg", "admin")
-    addProduct("Сети", 320, "Компьютерные науки", "seti.jpg", "user")
-    addProduct("Дискретка по скидке", 100, "Математика", "Шур_ДМ.jpg", "user")
+    addProduct("Оси", 250, "Компьютерные науки", "osi.jpg", "admin", "Короткое описание осей")
+    addProduct("Физкультура", 230, "Прочие предметы", "fizra.jpg", "admin", "Короткое описание")
+    addProduct("Сети", 320, "Компьютерные науки", "seti.jpg", "user", "Короткое описание")
+    addProduct("Дискретка по скидке", 100, "Математика", "Шур_ДМ.jpg", "user", "Короткое описание")
     addUser("admin", "admin", "me.mashkin7@gmail.com")
     addUser("user", "user", "me.mashkin7@gmail.com")
     pass
