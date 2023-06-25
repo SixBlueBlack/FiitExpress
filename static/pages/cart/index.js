@@ -14,12 +14,7 @@ async function Cart(){
 
     await ProductUpdate();
     // основное поле с покупкой и счетчиками
-    document.getElementById('cart_shop').append(CartItem())
     document.body.append(await Footer());
-    console.log(document.querySelector('.cart-wrapper'));
-    console.log(document.querySelector('.cart_project'));
-    console.log(document.querySelector('.cart_shop'));
-    // console.log(GetProductInfo());
 }
 Cart();
 
@@ -27,12 +22,18 @@ async function ProductUpdate(){
     let userInfo = await getUserInfo();
     let usersProductData;
 
-   for (let i = 0; i < userInfo['data'].length; i++){
+    if (userInfo['data'].length === 0){
+        document.getElementById('cart_shop').append(await CartEmpty())
+    }
+    if (userInfo['data'].length > 0) {
+        for (let i = 0; i < userInfo['data'].length; i++){
        const userData = userInfo['data'][i];
        usersProductData = JSON.parse(userData)["productInfo"];
        console.log(usersProductData);
        document.getElementById('cart_shop').append(await CartItem(usersProductData))
-   }
+        }
+    }
+
     calcCartPriceAndDelivery();
 }
 
