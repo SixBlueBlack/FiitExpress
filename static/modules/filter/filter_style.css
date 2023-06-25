@@ -13,7 +13,6 @@
     font-weight: 400;
     color: #333;
 
-
     margin-left: -15px;
     margin-bottom: 10px;
     margin-top: 20px;
@@ -98,10 +97,8 @@
     text-decoration: none;
     position: relative;
     color: black;
-    font-family: 'Poppins', sans-serif;
     cursor: pointer;
 }
-
 
 
 #side-checkbox:checked + .side-panel {
@@ -138,13 +135,6 @@
 }
 
 
-.filters_bar .filters_bar_counter {
-    color: darkgray;
-    font-size: 14px;
-    text-align: center;
-}
-
-
 .filters_bar a{
     background-color: rgb(253, 163, 0);
     color: #fff;
@@ -161,34 +151,3 @@
 .filters_bar a:hover{
     background-color: rgb(255, 214, 69);
 }
-
-/*button {
-    display: inline-block;
-    margin: 5px 5px 0 0;
-    padding: 10px 30px;
-    outline: 0;
-    border: 0;
-    cursor: pointer;
-    background: #5185a8;
-    color: #fff;
-    text-decoration: none;
-    font-family: arial, verdana, sans-serif;
-    font-size: 14px;
-    font-weight: 100;
-}
-
-input {
-    width: 100%;
-    margin: 0 0 5px 0;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 0;
-    font-family: arial, verdana, sans-serif;
-    font-size: 14px;
-    box-sizing: border-box;
-    -webkit-appearance: none;
-}
-
-.mbsc-page {
-    padding: 1em;
-}*/

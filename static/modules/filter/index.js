@@ -116,7 +116,6 @@ function Filter(){
                     </div>
 
                     <div class="filters_bar">
-                        <div class="filters_bar_counter">Нашли 0 товаров</div>
                         <a onclick="ApplyFilters()">Показать</a>
                     </div>
 
