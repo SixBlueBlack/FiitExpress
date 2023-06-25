@@ -1,9 +1,8 @@
 import json
-
 from flask_login import UserMixin, AnonymousUserMixin
-from p import select_products, select_products_by_id, select_products_by_category_and_price, select_products_by_price, \
-    addProduct, select_users, Product
-
+from db.utils import select_products, select_products_by_id, select_products_by_category_and_price, \
+    select_products_by_price, \
+    add_product, select_users, Product
 from typing import List, Any, Dict
 
 
@@ -51,8 +50,10 @@ class Products:
         except:
             return None
 
-    def create_product(self, title: str, price: int, category: str, picture_path: str, description: str = None, created_by : str = "") -> None:
-        addProduct(name=title, price=price, category=category, picture_path=picture_path, created_by=created_by, description=description)
+    def create_product(self, title: str, price: int, category: str, picture_path: str, description: str = None,
+                       created_by: str = "", _type: str = "") -> None:
+        add_product(name=title, price=price, category=category, picture_path=picture_path, created_by=created_by,
+                    description=description, _type=_type)
 
 
 class UserCommon:

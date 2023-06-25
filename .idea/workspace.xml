@@ -5,21 +5,20 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="408e575e-06dc-4c63-8e59-14bb42be6356" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/db/base.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/db/models.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/db/settings.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/img/homeworks/Mark.jpg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/1.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data_base_mock.py" beforeDir="false" afterPath="$PROJECT_DIR$/data_base_mock.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/p.py" beforeDir="false" afterPath="$PROJECT_DIR$/p.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data_base_mock.py" beforeDir="false" afterPath="$PROJECT_DIR$/db/data_base.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database_classes.py" beforeDir="false" afterPath="$PROJECT_DIR$/db/configure.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database_setup.py" beforeDir="false" afterPath="$PROJECT_DIR$/db/database_setup.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fiit_express_model.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/p.py" beforeDir="false" afterPath="$PROJECT_DIR$/db/utils.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/products.json" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/start.py" beforeDir="false" afterPath="$PROJECT_DIR$/start.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/modules/footer/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/modules/footer/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/modules/header/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/modules/header/main.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/modules/header/media.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/modules/header/media.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/pages/cart/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/pages/cart/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/pages/createProduct/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/pages/createProduct/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/pages/login/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/pages/login/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/pages/main/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/pages/main/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/pages/product/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/pages/product/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/pages/products/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/pages/products/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/pages/register/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/pages/register/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/users.json" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -30,6 +29,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="JavaScript File" />
+        <option value="Python Script" />
       </list>
     </option>
   </component>
@@ -45,11 +45,20 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "last_opened_file_path": "C:/Users/memas/source/FiitExpress/static/img/homeworks",
+    "node.js.selected.package.tslint": "(autodetect)"
   }
-}</component>
+}]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\memas\source\FiitExpress\static\img\homeworks" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\memas\source\FiitExpress\db" />
+    </key>
+  </component>
   <component name="RunManager" selected="Python.start">
     <configuration default="true" type="DjangoTestsConfigurationType">
       <module name="FiitExpress" />
@@ -106,6 +115,50 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="base" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="FiitExpress" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="C:\Users\memas\source\FiitExpress\db\base.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="configure" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="FiitExpress" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/db" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/db/configure.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="database_setup" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="FiitExpress" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -119,29 +172,7 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/database_setup.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="p" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="FiitExpress" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/p.py" />
+      <option name="SCRIPT_NAME" value="C:\Users\memas\source\FiitExpress\db\database_setup.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -253,6 +284,7 @@
     <recent_temporary>
       <list>
         <item itemvalue="Python.start" />
+        <item itemvalue="Python.configure" />
       </list>
     </recent_temporary>
   </component>
@@ -273,15 +305,16 @@
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/FiitExpress$Flask__start_py_.coverage" NAME="Flask (start.py) Coverage Results" MODIFIED="1687709325848" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
-    <SUITE FILE_PATH="coverage/FiitExpress$2.coverage" NAME="2 Coverage Results" MODIFIED="1687719048913" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/start_py$Flask__start_py_.coverage" NAME="Flask (start.py) Coverage Results" MODIFIED="1687686390956" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/start_py$data_base_mock.coverage" NAME="data_base_mock Coverage Results" MODIFIED="1687570680377" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/start_py$p.coverage" NAME="p Coverage Results" MODIFIED="1687645404104" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/FiitExpress$start.coverage" NAME="start Coverage Results" MODIFIED="1687720608725" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/FiitExpress$1.coverage" NAME="1 Coverage Results" MODIFIED="1687699405414" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/start_py$start.coverage" NAME="start Coverage Results" MODIFIED="1687685912475" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../FiitExpress1" />
     <SUITE FILE_PATH="coverage/start_py$FiitExpress.coverage" NAME="FiitExpress Coverage Results" MODIFIED="1687641470317" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
     <SUITE FILE_PATH="coverage/FiitExpress$p.coverage" NAME="p Coverage Results" MODIFIED="1687719910710" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/FiitExpress$2.coverage" NAME="2 Coverage Results" MODIFIED="1687719048913" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/FiitExpress$configure.coverage" NAME="configure Coverage Results" MODIFIED="1687728448070" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/db" />
+    <SUITE FILE_PATH="coverage/start_py$data_base_mock.coverage" NAME="data_base_mock Coverage Results" MODIFIED="1687570680377" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/start_py$p.coverage" NAME="p Coverage Results" MODIFIED="1687645404104" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/FiitExpress$start.coverage" NAME="start Coverage Results" MODIFIED="1687728454687" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/start_py$database_setup.coverage" NAME="database_setup Coverage Results" MODIFIED="1687570410863" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/FiitExpress$data_base_mock.coverage" NAME="data_base_mock Coverage Results" MODIFIED="1687703557054" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>

@@ -1,14 +1,11 @@
 import os
 
-from werkzeug.utils import secure_filename
 import flask_login
-from flask import Flask, render_template, request, url_for, redirect, flash
+from flask import Flask, render_template, request
 from flask_login import LoginManager, login_user, logout_user
-from flask import session
-from flask_login import UserMixin
-import data_base_mock
+from db import data_base
 import json
-from p import addUser
+from db.utils import add_user
 
 UPLOAD_FOLDER = '/path/to/the/uploads'
 
@@ -16,10 +13,10 @@ app = Flask(__name__)
 app.secret_key = 'hello'
 login_manager = LoginManager()
 login_manager.init_app(app)
-usersDb = data_base_mock.Users()
-productsDp = data_base_mock.Products()
+usersDb = data_base.Users()
+productsDp = data_base.Products()
 
-login_manager.anonymous_user = data_base_mock.AnonymousUser
+login_manager.anonymous_user = data_base.AnonymousUser
 
 
 @app.route('/')
@@ -113,7 +110,7 @@ def register_api():
     usersDb.get_all()
     if flogin and fpassword and fpassword2 and usersDb.get_by_login(flogin) is None:
         if fpassword == fpassword2:
-            addUser(flogin, fpassword, fmail)
+            add_user(flogin, fpassword, fmail)
             usersDb.get_all()
             user = usersDb.get_by_login(flogin)
             login_user(user, remember=frememberMe)
@@ -136,7 +133,7 @@ def get_products():
     categories = categories.split(',')
     if lower_bound is None or lower_bound == 'null' or lower_bound == '':
         lower_bound = 0
-    if upper_bound is None or upper_bound == 'null' or lower_bound == '':
+    if upper_bound is None or upper_bound == 'null' or upper_bound == '':
         upper_bound = 2147483647
     return productsDp.get_products(int(lower_bound), int(upper_bound), categories)
 
@@ -183,11 +180,12 @@ def create_product_api():
     category = json.loads(request.data)['category']
     description = json.loads(request.data)['description']
     picture_path = json.loads(request.data)['picture_path']
+    _type= json.loads(request.data)['type']
     author = flask_login.current_user.login
 
     if title and price and category and description:
         print(title, price, category, picture_path, description)
-        productsDp.create_product(title, price, category, picture_path, description, author)
+        productsDp.create_product(title, price, category, picture_path, description, author, _type)
         return {"success": True}
     else:
         return {"success": False, "error": "Не все поля заполнены"}
