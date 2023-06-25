@@ -10,11 +10,9 @@ function ProductsListItem(item){
               <div class="item-product__body">
                 <div class="item-product__content">
                   <h5 class="item-product__title">${item.title}</h5>
-                  <div class="item-product__text">Помощь в решение недорого</div>
                 </div>
                 <div class="item-product__prices">
                   <div class="item-product__price ">${item.price}₽</div>
-                  <div class="item-product__price item-product__price_old">${item.price}₽</div>
                 </div>
                 <div class="item-product__actions actions-product">
                   <div class="actions-product__body">
