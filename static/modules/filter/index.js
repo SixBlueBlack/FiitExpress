@@ -127,11 +127,11 @@ function Filter(){
 
             <div class="sort-action_header side-button-1" >
 
-            <label for="side-checkbox">
-              <span class="select-btn side-b">Фильтры</span>
-            </label>
+                <label for="side-checkbox">
+                  <span class="select-btn side-b">Фильтры</span>
+                </label>
 
-          </div>
+              </div>
           </div>
         </div>
 
