@@ -104,17 +104,19 @@ def login_api():
 def register_api():
     print(request.data)
     flogin = json.loads(request.data)['login']
+    fmail = json.loads(request.data)['mail']
     fpassword = json.loads(request.data)['password']
     fpassword2 = json.loads(request.data)['confirmPassword']
     frememberMe = json.loads(request.data)['rememberMe']
     success = False
     error = ''
-    if flogin and fpassword and fpassword2:
+    usersDb.get_all()
+    if flogin and fpassword and fpassword2 and usersDb.get_by_login(flogin) is None:
         if fpassword == fpassword2:
-            addUser(flogin, fpassword)
+            addUser(flogin, fpassword, fmail)
             usersDb.get_all()
             user = usersDb.get_by_login(flogin)
-            login_user(user)
+            login_user(user, remember=frememberMe)
             success = True
         else:
             error = "Пароли не совпадают"
@@ -132,9 +134,9 @@ def get_products():
     if categories == '' or categories is None:
         return []
     categories = categories.split(',')
-    if lower_bound is None or lower_bound == 'null':
+    if lower_bound is None or lower_bound == 'null' or lower_bound == '':
         lower_bound = 0
-    if upper_bound is None or upper_bound == 'null':
+    if upper_bound is None or upper_bound == 'null' or lower_bound == '':
         upper_bound = 2147483647
     return productsDp.get_products(int(lower_bound), int(upper_bound), categories)
 
@@ -181,10 +183,11 @@ def create_product_api():
     category = json.loads(request.data)['category']
     description = json.loads(request.data)['description']
     picture_path = json.loads(request.data)['picture_path']
+    author = flask_login.current_user.login
 
     if title and price and category and description:
         print(title, price, category, picture_path, description)
-        productsDp.create_product(title, price, category, picture_path, description)
+        productsDp.create_product(title, price, category, picture_path, description, author)
         return {"success": True}
     else:
         return {"success": False, "error": "Не все поля заполнены"}

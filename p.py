@@ -16,6 +16,7 @@ class Product(Base):
     price = Column(Integer, nullable=False)
     category = Column(String, nullable=False)
     imgSrc = Column(String, nullable=False)
+    created_by = Column(String, nullable=False)
 
 
 class User(Base):
@@ -58,15 +59,21 @@ def select_products():
     result = session.execute(select(Product))
     return result.scalars()
 
+def drop_products():
+    Product.__table__.drop(engine)
+
+def drop_users():
+    User.__table__.drop(engine)
+
 
 def select_products_by_id(_id: int):
     result = session.execute(select(Product).where(Product.id == _id))
     return result.scalars()
 
 
-def addProduct(name: str, price: int, category: str, picture_path: str, description: str = None):
+def addProduct(name: str, price: int, category: str, picture_path: str, created_by: str, description: str = None):
     session.add(Product(title=name, description=description, price=price, category=category,
-                        imgSrc=picture_path))
+                        imgSrc=picture_path, created_by=created_by))
     session.commit()
 
 
@@ -82,13 +89,14 @@ def updateProduct(_id: int, new_name: str):
 
 
 if __name__ == "__main__":
+    drop_products()
+    drop_users()
     Base.metadata.create_all(engine)
-    addProduct("Питон", 300, "Программирование", "python.jpg", "Pythonчик")
-    addProduct("Оси", 250, "Компьютерные науки", "osi.jpg")
-    addProduct("Физкультура", 230, "Прочие предметы", "fizra.jpg")
-    addProduct("Сети", 320, "Компьютерные науки", "seti.jpg")
-    addProduct("Дискретка по скидке", 100, "Математика", "Шур_ДМ.jpg")
-    addUser("admin", "admin")
-    addUser("user", "user")
-    # print(int(None))
+    addProduct("Питон", 300, "Программирование", "python.jpg", "admin", "Pythonчик")
+    addProduct("Оси", 250, "Компьютерные науки", "osi.jpg", "admin", "Короткое описание осей")
+    addProduct("Физкультура", 230, "Прочие предметы", "fizra.jpg", "admin", "Короткое описание")
+    addProduct("Сети", 320, "Компьютерные науки", "seti.jpg", "user", "Короткое описание")
+    addProduct("Дискретка по скидке", 100, "Математика", "Шур_ДМ.jpg", "user", "Короткое описание")
+    addUser("admin", "admin", "me.mashkin7@gmail.com")
+    addUser("user", "user", "me.mashkin7@gmail.com")
     pass

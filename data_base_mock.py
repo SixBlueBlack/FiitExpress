@@ -51,15 +51,16 @@ class Products:
         except:
             return None
 
-    def create_product(self, title: str, price: int, category: str, picture_path: str, description: str = None) -> None:
-        addProduct(title, price, category, picture_path, description)
+    def create_product(self, title: str, price: int, category: str, picture_path: str, description: str = None, created_by : str = "") -> None:
+        addProduct(name=title, price=price, category=category, picture_path=picture_path, created_by=created_by, description=description)
 
 
 class UserCommon:
-    def __init__(self, login: str = 'anonymus', password: str = 'anonymus') -> None:
+    def __init__(self, login: str = 'anonymus', password: str = 'anonymus', mail: str = '') -> None:
         self.id = login
         self.password = password
         self.login = login
+        self.mail = mail
         self.data = []
 
     @property
@@ -93,7 +94,7 @@ class Users:
     def get_all(self) -> list[User]:
         result = []
         for elem in select_users():
-            result.append(User(elem.login, elem.password))
+            result.append(User(elem.login, elem.password, elem.data))
         self.data = result
         return result
 
