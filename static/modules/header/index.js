@@ -31,7 +31,8 @@ async function Header() {
                             <button type="submit"></button>
                         </form>
                         </li>
-                        <li class="nav-item"><a href="/products" class="nav-link">Все задачи</a></li>
+                        <li class="nav-item"><a href="/products" class="nav-link">Задачи</a></li>
+                        <li class="nav-item"><a href="/tutors" class="nav-link">Репетиторы</a></li>
                         ${await getAuthBlock()}  
                     </ul>
                         

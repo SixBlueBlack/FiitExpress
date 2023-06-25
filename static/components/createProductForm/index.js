@@ -10,19 +10,22 @@ function CreateProductForm(){
             <hr>
 
             <label for="item-name"><b>Название товара/услуги</b></label>
-
             <input type="text" placeholder="Enter Name Item" name="name" required>
+            
+            <label for="item-type"><b>Тип публикации</b></label>
+            <p><select id="genres" name="type-list" required>
+                 <option></option>
+                 <option>Задача</option>
+                 <option>Репетитор</option>
+             </select></p>
             
             <label for="item-category"><b>Категория товара/услуги</b></label>
             <p><select id="genres" name="category-list" required>
                  <option></option>
-                 <option>Алгоритмы</option>
                  <option>Программирование</option>
-                 <option>Информационные технологии</option>
+                 <option>Компьютерные науки</option>
                  <option>Математика</option>
-                 <option>Гуманитарные предметы</option>
-                 <option>Физкультура</option>
-                 <option>Другое</option>
+                 <option>Прочие предметы</option>
              </select></p>
 
             <label for="dscr"><b>Описание товара/услуги</b></label>
@@ -79,6 +82,7 @@ async function SendRequest(){
             price : document.getElementsByName('price')[0].value,
             category : document.getElementsByName('category-list')[0].value,
             description : document.getElementsByName('description')[0].value,
+            type : document.getElementsByName('type-list')[0].value,
             picture_path : js1['filename']
         })
     })
