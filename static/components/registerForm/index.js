@@ -9,10 +9,13 @@ function RegisterForm() {
           <h1>Регистрация</h1>
           <p>Регистрация на сайте FIITExpress</p>
           <hr>
-          <label for="login"><b>Логин</b></label>
-          <input class="input" type="text" placeholder="Ваш логин" name="login" required>
+      <label for="login"><b>Логин</b></label>
+      <input class="input" type="text" placeholder="Ваш логин" name="login" required>
     
     <label for="psw"><b>Пароль</b></label>
+    <input class="input" type="password" placeholder="Пароль" name="password" required>
+    
+     <label for="psw"><b>Пароль</b></label>
     <input class="input" type="password" placeholder="Повтор пароля" name="confirmPassword" required>
 
     <input class="input" type="checkbox" checked id="rememberMe"><label>Запомнить меня</label>

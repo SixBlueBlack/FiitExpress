@@ -32,7 +32,7 @@ async function Header() {
                         </form>
                         </li>
                         <li class="nav-item"><a href="/products" class="nav-link">Все задачи</a></li>
-                        <li class="nav-item"><a href="/create_product" class="nav-link">+Создать товар</a></li>
+                       
                         ${await getAuthBlock()}  
                     </ul>
                         
@@ -50,7 +50,7 @@ async function getAuthBlock(){
         let userInfo = await getUserInfo()
         if(userInfo['is_anonymous'] === false)
                 return `
-                 
+                        <li class="nav-item"><a href="/create_product" class="nav-link">+Создать товар</a></li>
                         <li class="nav-item"><a href="/cart" class="nav-link">
                             <img id="basket-icon" src="../../static/img/icons/basket.svg" alt="Корзина">
                             </a>

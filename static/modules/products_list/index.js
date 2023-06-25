@@ -7,43 +7,48 @@ async function ProductsList(sort = 'priceDesc') {
 }
 
 async function RefreshProductsList(sort = 'alphaAsc', categories = 'all', lower_bound = null, upper_bound = null) {
-    let div = document.getElementById('products_list');
-    div.innerHTML = ``;
-    let productsArray = await getProducts(categories, lower_bound, upper_bound);
 
+    window.productsArray = await getProducts(categories, lower_bound, upper_bound);
+    await ReSortProducts(sort);
+
+}
+
+async function ReSortProducts(sort = 'alphaAsc'){
     if (sort === 'priceAsc') {
         let fn = function (a, b) {
             if (a.price > b.price) return 1;
             if (a.price === b.price) return 0;
             if (a.price < b.price) return -1;
         }
-        productsArray.sort(fn);
+        window.productsArray.sort(fn);
     } else if (sort === 'priceDesc') {
         let fn = function (a, b) {
             if (a.price < b.price) return 1;
             if (a.price === b.price) return 0;
             if (a.price > b.price) return -1;
         }
-        productsArray.sort(fn);
+        window.productsArray.sort(fn);
     } else if (sort === 'alphaAsc') {
         let fn = function (a, b) {
             if (a.title > b.title) return 1;
             if (a.title === b.title) return 0;
             if (a.title < b.title) return -1;
         }
-        productsArray.sort(fn);
+        window.productsArray.sort(fn);
     } else if (sort === 'alphaDesc') {
         let fn = function (a, b) {
             if (a.title < b.title) return 1;
             if (a.title === b.title) return 0;
             if (a.title > b.title) return -1;
         }
-        productsArray.sort(fn);
+        window.productsArray.sort(fn);
     }
 
+    let div = document.getElementById('products_list');
+    div.innerHTML = ``;
 
-    Object.keys(productsArray).forEach(function (key) {
-        let item = productsArray[key];
+    Object.keys(window.productsArray).forEach(function (key) {
+        let item = window.productsArray[key];
         div.append(ProductsListItem(item));
     });
 }
