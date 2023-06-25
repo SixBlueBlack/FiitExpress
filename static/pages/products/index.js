@@ -1,4 +1,5 @@
 async function ShowMainPage() {
+    window.productType = 'tasks';
     window.userData = {'cart':{}}
     document.body.prepend(await Header());
     document.getElementById('main-container').append(Filter())

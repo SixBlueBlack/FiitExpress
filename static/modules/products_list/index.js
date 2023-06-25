@@ -53,6 +53,12 @@ async function ReSortProductsList(sort){
 }
 
 async function getProducts(categories, lower_bound, upper_bound) {
-    const response = await fetch(`http://127.0.0.1:5000/api/get_products?category=${categories}&lower_bound=${lower_bound}&upper_bound=${upper_bound}`);
-    return await response.json();
+    if (window.productType === 'tutors') {
+        const response = await fetch(`http://127.0.0.1:5000/api/get_tutors?category=${categories}&lower_bound=${lower_bound}&upper_bound=${upper_bound}`);
+        return await response.json();
+    }
+    else{
+        const response = await fetch(`http://127.0.0.1:5000/api/get_products?category=${categories}&lower_bound=${lower_bound}&upper_bound=${upper_bound}`);
+        return await response.json();
+    }
 }

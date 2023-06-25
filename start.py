@@ -49,6 +49,11 @@ def products():
     return render_template('products.html')
 
 
+@app.route('/tutors')
+def tutors():
+    return render_template('tutors.html')
+
+
 @app.route('/cart')
 def cart():
     return render_template('cart.html')
@@ -140,7 +145,30 @@ def get_products():
         lower_bound = 0
     if upper_bound is None or upper_bound == 'null' or upper_bound == '':
         upper_bound = 2147483647
-    return productsDp.get_products(int(lower_bound), int(upper_bound), categories)
+    arr = productsDp.get_products(int(lower_bound), int(upper_bound), categories)
+    return list(filter(lambda x: x['type'] == 'Задача', arr))
+
+
+@app.route('/api/get_tutors')
+def get_tutors():
+    lower_bound = request.args.get('lower_bound')
+    upper_bound = request.args.get('upper_bound')
+    categories = request.args.get('category')
+
+    lower_bound = 0 if lower_bound == '' else lower_bound
+    upper_bound = 9999999 if upper_bound == '' else upper_bound
+    categories = "Компьютерные науки,Математика,Прочие предметы,Программирование" if categories == '' else categories
+    print(lower_bound, upper_bound, categories)
+    if categories == '' or categories is None:
+        return []
+    categories = categories.split(',')
+    if lower_bound is None or lower_bound == 'null' or lower_bound == '':
+        lower_bound = 0
+    if upper_bound is None or upper_bound == 'null' or upper_bound == '':
+        upper_bound = 2147483647
+    arr = productsDp.get_products(int(lower_bound), int(upper_bound), categories)
+    return list(filter(lambda x: x['type'] == 'Репетитор', arr))
+
 
 
 @app.route('/api/logout')
@@ -185,7 +213,7 @@ def create_product_api():
     category = json.loads(request.data)['category']
     description = json.loads(request.data)['description']
     picture_path = json.loads(request.data)['picture_path']
-    _type= json.loads(request.data)['type']
+    _type = json.loads(request.data)['type']
     author = flask_login.current_user.login
 
     if title and price and category and description:
