@@ -52,22 +52,22 @@ async function IndexBlock(){
     <section class="portfolio">
         <div class="container">
             <div class="portfolio-title">
-                <h2 class="title-1">Самое популярное</h2>
+                <h2 class="title-1">Самое интересное</h2>
             </div>
 
             <div class="project" data-aos="flip-up">
                 <img src="../static/img/portfolio/01.jpg" alt="Online fashion store" class="project-img">
-                <h3 class="project-title"><a href="#!">Шур по скидке</a></h3>
+                <h3 class="project-title"><a href="">Поможем закрыть курс по дизайну</a></h3>
             </div>
 
             <div class="project" data-aos="flip-up">
                 <img src="../static/img/portfolio/02.jpg" alt="Reebok Store" class="project-img">
-                <h3 class="project-title"><a href="#!">Дискретка за копейки</a></h3>
+                <h3 class="project-title"><a href="#!">Программируем вместе</a></h3>
             </div>
 
             <div class="project" data-aos="flip-up">
                 <img src="../static/img/portfolio/03.jpg" alt="Braun Landing Page" class="project-img">
-                <h3 class="project-title"><a href="#!">Приват от Волкова</a></h3>
+                <h3 class="project-title"><a href="#!">Репетиторство от работников IT-компаний</a></h3>
             </div>
 
         </div>

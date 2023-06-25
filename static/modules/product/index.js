@@ -12,7 +12,7 @@ async function Product(item){
                   <h2>${item.title}</h2>
             </div>
             <div class="description">
-                <p>Тут описание, которого нет(<p>
+                <p>${item.description}(<p>
             </div>
             <div class="add-to-basket">
                 <p class="coast">${item.price} ₽</p>

@@ -7,17 +7,14 @@
     <list default="true" id="408e575e-06dc-4c63-8e59-14bb42be6356" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/static/components/createProductForm/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/components/createProductForm/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/components/loginForm/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/components/loginForm/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/components/registerForm/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/components/registerForm/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/components/loginForm/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/components/loginForm/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/img/portfolio/01.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/static/img/portfolio/01.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/img/portfolio/02.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/static/img/portfolio/02.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/img/portfolio/03.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/static/img/portfolio/03.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/modules/footer/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/modules/footer/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/static/modules/footer/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/modules/footer/main.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/modules/header/reset.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/modules/header/reset.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/cart.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/cart.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/create_product.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/create_product.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/login.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/product.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/product.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/products.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/products.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/register.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/register.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/modules/indexBlock/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/modules/indexBlock/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/modules/product/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/modules/product/index.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -43,7 +40,12 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="RunManager" selected="Python.start">
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "node.js.selected.package.tslint": "(autodetect)"
+  }
+}]]></component>
+  <component name="RunManager">
     <configuration name="database_setup" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="FiitExpress" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -107,11 +109,6 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <recent_temporary>
-      <list>
-        <item itemvalue="Python.start" />
-      </list>
-    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -121,7 +118,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1687693494475</updated>
-      <workItem from="1687700461629" duration="20043000" />
+      <workItem from="1687700461629" duration="25105000" />
     </task>
     <servers />
   </component>

@@ -198,6 +198,7 @@ body {
 .contacts {
     padding: 90px 0;
     text-align: center;
+    background-color: black;
 }
 
 .contacts-title {
@@ -230,8 +231,7 @@ body {
     color: #828282;
 }
 
-#genres{
-    background-color: #8fd8a0;
-    color: #0b93ff;
-    background: #FDA300;
+.contacts{
+    background-color: #F1F1F1;
 }
+
