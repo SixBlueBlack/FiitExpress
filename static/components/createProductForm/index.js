@@ -14,13 +14,15 @@ function CreateProductForm(){
             <input type="text" placeholder="Enter Name Item" name="name" required>
             
             <label for="item-category"><b>Категория товара/услуги</b></label>
-            <p><select name="category-list" required>
+            <p><select id="genres" name="category-list" required>
                  <option></option>
-                 <option>Высшая математика</option>
-                 <option>Ракетостроение</option>
+                 <option>Алгоритмы</option>
+                 <option>Программирование</option>
                  <option>Информационные технологии</option>
-                 <option>Программная инженерия</option>
-                 <option>Биатлон</option>
+                 <option>Математика</option>
+                 <option>Гуманитарные предметы</option>
+                 <option>Физкультура</option>
+                 <option>Другое</option>
              </select></p>
 
             <label for="dscr"><b>Описание товара/услуги</b></label>
@@ -39,13 +41,15 @@ function CreateProductForm(){
         </div>
 
     </form>
-    <script src="https://snipp.ru/cdn/jquery/2.1.1/jquery.min.js"></script>
     <script>
         $('.input-file input[type=file]').on('change', function(){
             let file = this.files[0];
             $(this).closest('.input-file').find('.input-file-text').html(file.name);
         });
-    </script>`
+    </script>
+    
+    `
+
 
     return div;
 }

@@ -28,18 +28,17 @@ async function Header() {
                     <ul class="nav-list" >
                         <li class="nav-item"><form class="search">
                             <input  type="text" placeholder="Искать здесь...">
-                            <button type="submit">Искать</button>
+                            <button type="submit"></button>
                         </form>
                         </li>
                         <li class="nav-item"><a href="/products" class="nav-link">Все задачи</a></li>
-<!--                        <li class="nav-item"><a href="/" class="nav-link">Репетиторы</a></li>-->
                         <li class="nav-item"><a href="/create_product" class="nav-link">+Создать товар</a></li>
                         ${await getAuthBlock()}  
-                        </ul>
+                    </ul>
                         
                                        
                     <button id="nav-btn" class="nav-button">
-                        <img id="nav-btn-img" src="../static/modules/header/img/icons/nav-open.svg" alt="Nav button">
+                        <img id="nav-btn-img" src="../../static/img/icons/nav-open.svg" alt="Nav button">
                     </button>
                 </nav>
             </div>
