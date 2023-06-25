@@ -3,7 +3,9 @@ async function CartItem(usersProductData) {
     div.className = "cart_box";
     div.innerHTML = `
           <link rel="stylesheet" href="../static/components/cartItem/style.css">
-          <img class="product-img" src=${usersProductData["imgSrc"]} alt="">
+          <div class="item-product__image _ibg">
+            <img class="product-img" src=${usersProductData["imgSrc"]} alt="">
+           </div>
           <div class="cart_content">
             <h3 class="cart_content__title">${usersProductData["title"]}</h3>
             <div class="cart_content__price">${usersProductData["price"]}</div>
