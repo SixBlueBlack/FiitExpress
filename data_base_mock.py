@@ -56,10 +56,11 @@ class Products:
 
 
 class UserCommon:
-    def __init__(self, login: str = 'anonymus', password: str = 'anonymus') -> None:
+    def __init__(self, login: str = 'anonymus', password: str = 'anonymus', mail: str = '') -> None:
         self.id = login
         self.password = password
         self.login = login
+        self.mail = mail
         self.data = []
 
     @property
@@ -93,7 +94,7 @@ class Users:
     def get_all(self) -> list[User]:
         result = []
         for elem in select_users():
-            result.append(User(elem.login, elem.password))
+            result.append(User(elem.login, elem.password, elem.data))
         self.data = result
         return result
 

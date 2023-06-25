@@ -132,9 +132,9 @@ def get_products():
     if categories == '' or categories is None:
         return []
     categories = categories.split(',')
-    if lower_bound is None or lower_bound == 'null':
+    if lower_bound is None or lower_bound == 'null' or lower_bound == '':
         lower_bound = 0
-    if upper_bound is None or upper_bound == 'null':
+    if upper_bound is None or upper_bound == 'null' or lower_bound == '':
         upper_bound = 2147483647
     return productsDp.get_products(int(lower_bound), int(upper_bound), categories)
 
