@@ -1,12 +1,12 @@
-function CartItem() {
+async function CartItem(usersProductData) {
     let div = document.createElement('div');
     div.className = "cart_box";
     div.innerHTML = `
           <link rel="stylesheet" href="../static/components/cartItem/style.css">
-          <img src="https://clever-lady.ru/wp-content/uploads/2023/01/stay-home-5205390_19.png" alt="">
+          <img class="product-img" src=${usersProductData["imgSrc"]} alt="">
           <div class="cart_content">
-            <h3>Задачи по матану</h3>
-            <div class="cart_content__price">250₽</div>
+            <h3 class="cart_content__title">${usersProductData["title"]}</h3>
+            <div class="cart_content__price">${usersProductData["price"]}</div>
 
             <div class="counter">
               <span class="down" data-action="minus">-</span>
@@ -23,7 +23,6 @@ function CartItem() {
                 </svg>
               </i>
             </div>
-
           </div>
           `
     return div

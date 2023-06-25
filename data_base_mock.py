@@ -60,7 +60,7 @@ class UserCommon:
         self.id = login
         self.password = password
         self.login = login
-        self.data = ''
+        self.data = []
 
     @property
     def json(self) -> str:
