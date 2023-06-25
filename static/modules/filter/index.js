@@ -5,7 +5,9 @@ function Filter(){
     <div class="sub-category_status">
     <link rel="stylesheet" href="../static/modules/filter/sorted_style.css">
     <link rel="stylesheet" href="../static/modules/filter/filter_style.css">
-    <link rel="stylesheet" href="../static/modules/filter/mobiscroll.javascript.min.css">
+    <link rel="stylesheet" href="../static/modules/filter/category-filter.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+    <script src="../static/modules/filter/script.js"></script>
 
 
       <div class="sort">
@@ -13,7 +15,8 @@ function Filter(){
           <span class="sort-item_title">Упорядочить:</span>
           <div class="sort-action">
             <div class="sort-action_header">
-              <span class="sort-action_current">по популярности</span>
+              <span class="sort-action_current">по названию</span>
+              <span class="sort-action_description">A→Я</span>
             </div>
 
             <script type="text/javascript">
@@ -27,7 +30,13 @@ function Filter(){
             </script>
             <div class="sort-action_body">
               <div class="sort-action_item">
-                <span class="sort-action_name">по популярности</span>
+                <span class="sort-action_name">по названию</span>
+                <span class="sort-action_description">А→Я</span>
+              </div>
+
+              <div class="sort-action_item">
+                <span class="sort-action_name">по названию</span>
+                <span class="sort-action_description">Я→А</span>
               </div>
 
               <div class="sort-action_item">
@@ -76,25 +85,65 @@ function Filter(){
                     </div>
 
                     <div class="filters_item filters-product">
-                      <h3 class="filters_title">Предметы</h3>
 
-                      <label>
-                        <input mbsc-input id="my-input" data-dropdown="true" data-tags="true" />
-                      </label>
-                      <select id="multiple-select" multiple>
-                        <option value="1">Алгоритмы и структуры данных</option>
-                        <option value="2">Математический анализ</option>
-                        <option value="3">Теория вероятностей</option>
-                      </select>
+                      <div class="select-btn" id="category-btn">
+                        <span class="btn-text">Категории</span>
+                        <span class="arrow-dwn">
+                          <i class="fa-solid fa-chevron-down"></i>
+                        </span>
+                      </div>
 
-                      <script type="text/javascript">
-                        mobiscroll.select('#multiple-select', {
-                          inputElement: document.getElementById('my-input'),
-                          touchUi: false
-                        });
-                      </script>
-
+                      <ul class="list-items">
+                        <li class="item">
+                          <span class="checkbox">
+                              <i class="fa-solid fa-check check-icon"></i>
+                          </span>
+                          <span class="item-text">Алгоритмы</span>
+                        </li>
+                        <li class="item">
+                          <span class="checkbox">
+                              <i class="fa-solid fa-check check-icon"></i>
+                          </span>
+                          <span class="item-text">Программирование</span>
+                        </li>
+                        <li class="item">
+                          <span class="checkbox">
+                              <i class="fa-solid fa-check check-icon"></i>
+                          </span>
+                          <span class="item-text">Информационные технологии</span>
+                        </li>
+                        <li class="item">
+                          <span class="checkbox">
+                              <i class="fa-solid fa-check check-icon"></i>
+                          </span>
+                          <span class="item-text">Математика</span>
+                        </li>
+                        <li class="item">
+                          <span class="checkbox">
+                              <i class="fa-solid fa-check check-icon"></i>
+                          </span>
+                          <span class="item-text">Гуманитарные предметы</span>
+                        </li>
+                        <li class="item">
+                          <span class="checkbox">
+                              <i class="fa-solid fa-check check-icon"></i>
+                          </span>
+                          <span class="item-text">Физкультура</span>
+                        </li>
+                        <li class="item">
+                          <span class="checkbox">
+                              <i class="fa-solid fa-check check-icon"></i>
+                          </span>
+                          <span class="item-text">Другое</span>
+                        </li>
+                      </ul>
                     </div>
+
+                    <div class="filters_bar">
+                        <div class="filters_bar_counter">Нашли 0 товаров</div>
+                        <a href="">Показать</a>
+                    </div>
+
                   </div>
                 </div>
               </div>
