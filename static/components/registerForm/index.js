@@ -9,8 +9,11 @@ function RegisterForm() {
           <h1>Регистрация</h1>
           <p>Регистрация на сайте FIITExpress</p>
           <hr>
-          <label for="login"><b>Логин</b></label>
-          <input class="input" type="text" placeholder="Ваш логин" name="login" required>
+    <label for="login"><b>Логин</b></label>
+    <input class="input" type="text" placeholder="Ваш логин" name="login" required>
+    
+    <label for="login"><b>Почта</b></label>
+    <input class="input" type="text" placeholder="Ваша почта" name="mail" required>
     
     <label for="psw"><b>Пароль</b></label>
     <input class="input" type="password" placeholder="Повтор пароля" name="confirmPassword" required>
@@ -36,6 +39,7 @@ async function Register(){
         method: 'POST',
         body: JSON.stringify({
             login : document.getElementsByName('login')[0].value,
+            mail : document.getElementsByName('mail')[0].value,
             password : document.getElementsByName('password')[0].value,
             confirmPassword : document.getElementsByName('confirmPassword')[0].value,
             rememberMe : document.getElementById('rememberMe').checked})

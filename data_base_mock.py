@@ -51,8 +51,8 @@ class Products:
         except:
             return None
 
-    def create_product(self, title: str, price: int, category: str, picture_path: str, description: str = None) -> None:
-        addProduct(title, price, category, picture_path, description)
+    def create_product(self, title: str, price: int, category: str, picture_path: str, description: str = None, created_by : str = "") -> None:
+        addProduct(name=title, price=price, category=category, picture_path=picture_path, created_by=created_by, description=description)
 
 
 class UserCommon:
