@@ -4,6 +4,7 @@ async function ShowMainPage() {
     document.getElementById('main-container').append(Filter())
     document.getElementById('main-container').append(await ProductsList());
     await RefreshProductsList();
+    SetButtonsActivity();
     // document.getElementById('side-menu-placeholder').prepend(FilterMenu());
 }
 

@@ -1,25 +1,28 @@
 
+function SetButtonsActivity() {
 
-let selectBtn = document.getElementById("category-btn"),
-    items = document.querySelectorAll(".item");
+    let selectBtn = document.getElementById("category-btn"),
+        items = document.querySelectorAll(".item");
 
-console.log(selectBtn)
+    console.log(selectBtn)
 
-selectBtn.addEventListener("click", () => {
-    selectBtn.classList.toggle("open");
-});
+    selectBtn.addEventListener("click", () => {
+        selectBtn.classList.toggle("open");
+    });
 
-items.forEach(item => {
-    item.addEventListener("click", () => {
-        item.classList.toggle("checked")
+    items.forEach(item => {
+        item.addEventListener("click", () => {
+            item.classList.toggle("checked")
 
-        let  checked = document.querySelectorAll(".checked"),
-            btnText = document.querySelector(".btn-text");
+            let checked = document.querySelectorAll(".checked"),
+                btnText = document.querySelector(".btn-text");
 
-            if(checked && checked.length > 0) {
+            if (checked && checked.length > 0) {
                 btnText.innerText = `${checked.length} Выбрано`;
-            }else{
+            } else {
                 btnText.innerText = "Категория";
             }
-    });
-})
+        });
+    })
+
+}

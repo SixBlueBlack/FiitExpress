@@ -28,8 +28,9 @@ function Filter(){
                         })
               }
             </script>
+<!--            Сортировка-->
             <div class="sort-action_body">
-              <div class="sort-action_item" onclick="RefreshProductsList('alphaAsc')>
+              <div class="sort-action_item" onclick="RefreshProductsList('alphaAsc')">
                 <span class="sort-action_name">по названию</span>
                 <span class="sort-action_description">А→Я</span>
               </div>
@@ -152,7 +153,7 @@ function Filter(){
             <div class="sort-action_header side-button-1" >
 
               <label for="side-checkbox">
-                <span class="side-b">Фильтры</span>
+                <span class="side-b" id="filter_buttn">Фильтры</span>
               </label>
 
             </div>
