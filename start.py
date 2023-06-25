@@ -131,6 +131,11 @@ def get_products():
     lower_bound = request.args.get('lower_bound')
     upper_bound = request.args.get('upper_bound')
     categories = request.args.get('category')
+
+    lower_bound = 0 if lower_bound == '' else lower_bound
+    upper_bound = 9999999 if upper_bound == '' else upper_bound
+    categories = "Компьютерные науки,Математика,Прочие предметы,Программирование" if categories == '' else categories
+    print(lower_bound, upper_bound, categories)
     if categories == '' or categories is None:
         return []
     categories = categories.split(',')
