@@ -137,7 +137,6 @@ def get_products():
     lower_bound = 0 if lower_bound == '' else lower_bound
     upper_bound = 9999999 if upper_bound == '' else upper_bound
     categories = "Компьютерные науки,Математика,Прочие предметы,Программирование" if categories == '' else categories
-    print(lower_bound, upper_bound, categories)
     if categories == '' or categories is None:
         return []
     categories = categories.split(',')
@@ -158,7 +157,6 @@ def get_tutors():
     lower_bound = 0 if lower_bound == '' else lower_bound
     upper_bound = 9999999 if upper_bound == '' else upper_bound
     categories = "Компьютерные науки,Математика,Прочие предметы,Программирование" if categories == '' else categories
-    print(lower_bound, upper_bound, categories)
     if categories == '' or categories is None:
         return []
     categories = categories.split(',')
@@ -217,7 +215,6 @@ def create_product_api():
     author = flask_login.current_user.login
 
     if title and price and category and description:
-        print(title, price, category, picture_path, description)
         productsDp.create_product(title, price, category, picture_path, description, author, _type)
         return {"success": True}
     else:
@@ -233,6 +230,7 @@ def get_user_info_api():
 def update_user_info_api():
     flask_login.current_user.data.append(request.data.decode('utf-8'))
     flask_login.current_user.data = list(set(flask_login.current_user.data))
+    print(flask_login.current_user.data)
     return []
 
 

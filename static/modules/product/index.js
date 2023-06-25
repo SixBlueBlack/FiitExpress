@@ -17,9 +17,25 @@ async function Product(item){
             <div class="add-to-basket">
                 <p class="coast">${item.price} ₽</p>
 
-                <a href="#!" class="btn">Добавить в корзину</a>
+                <a href="#!" class="btn" onclick="ToCart()">Добавить в корзину</a>
             </div>
         </div>
       </div>`
     return productElement;
+}
+
+async function ToCart(){
+		const productInfo = {
+			imgSrc: "../static/img/homeworks/" + currentProduct.imgSrc,
+			title: currentProduct.title,
+			price: currentProduct.price
+		};
+		await postUserData(productInfo);
+}
+
+async function postUserData(productInfo){
+	await fetch("/api/update_user_info", {
+		method: 'POST',
+		body: JSON.stringify( {productInfo} )
+	});
 }
