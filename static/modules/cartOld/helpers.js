@@ -6,16 +6,14 @@ function calcCartPriceAndDelivery() {
 	let priceTotal = 0;
     let amountProducts = 0;
 
-	// Обходим все блоки с ценами в корзине
 	priceElements.forEach(function (item) {
 		const amountElements = item.querySelector('[data-counter]').innerText;
 		const priceProduct = item.querySelector('.cart_content__price').innerText;
-        
+
         amountProducts += parseInt(amountElements);
 		priceTotal += parseInt(priceProduct) * parseInt(amountElements);
 	});
-    //
-	// Отображаем цену на странице
+
 	totalPriceEl.innerText = priceTotal;
     cartWrapper.querySelector('.cart_counter').innerText = `Товары, ${amountProducts} шт.`;
 }
