@@ -71,7 +71,6 @@ def load_user(user_id):
 def login_api():
     # data = json.dumps(request.data)
     flogin = json.loads(request.data)['login']
-    print(flogin)
     fpassword = json.loads(request.data)['password']
 
     success = False
@@ -87,15 +86,15 @@ def login_api():
 def get_products():
     lower_bound = request.args.get('lower_bound')
     upper_bound = request.args.get('upper_bound')
-    category = request.args.get('category')
-    print(category)
-    if not(category is None):
-        category = category.split(',')[0]
+    categories = request.args.get('category')
+    if categories == '' or categories is None:
+        return []
+    categories = categories.split(',')
     if lower_bound is None or lower_bound == 'null':
         lower_bound = 0
     if upper_bound is None or upper_bound == 'null':
         upper_bound = 2147483647
-    return productsDp.get_products(int(lower_bound), int(upper_bound), category)
+    return productsDp.get_products(int(lower_bound), int(upper_bound), categories)
 
 
 @app.route('/api/register', methods=["POST"])

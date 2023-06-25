@@ -1,7 +1,8 @@
 from sqlalchemy import create_engine, Column, Integer, String, select, update
 from sqlalchemy.orm import declarative_base, Session
+from typing import List
 
-engine = create_engine('postgresql://postgres:postgres@localhost/fiitexpressdb1')
+engine = create_engine('postgresql://postgres:12qwaszx3edc@localhost/fiitexpressdb1')
 engine.connect()
 Base = declarative_base()
 session = Session(engine)
@@ -40,9 +41,9 @@ def select_user_by_login(login: str):
     return result.scalars()
 
 
-def select_products_by_category_and_price(category: str, lower_bound: int, upper_bound: int):
+def select_products_by_category_and_price(categories: List[str], lower_bound: int, upper_bound: int):
     result = session.execute(select(Product).where(
-        (Product.category == category) &
+        (Product.category.in_(categories)) &
         (Product.price.between(lower_bound, upper_bound))
     ))
     return result.scalars()
