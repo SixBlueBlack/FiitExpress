@@ -29,22 +29,22 @@ function Filter(){
               }
             </script>
             <div class="sort-action_body">
-              <div class="sort-action_item">
+              <div class="sort-action_item" onclick="RefreshProductsList('alphaAsc')>
                 <span class="sort-action_name">по названию</span>
                 <span class="sort-action_description">А→Я</span>
               </div>
 
-              <div class="sort-action_item">
+              <div class="sort-action_item" onclick="RefreshProductsList('alphaDesc')">
                 <span class="sort-action_name">по названию</span>
                 <span class="sort-action_description">Я→А</span>
               </div>
 
-              <div class="sort-action_item">
+              <div class="sort-action_item" onclick="RefreshProductsList('priceAsc')">
                 <span class="sort-action_name">по цене</span>
                 <span class="sort-action_description">по возрастанию</span>
               </div>
 
-              <div class="sort-action_item">
+              <div class="sort-action_item" onclick="RefreshProductsList('priceDesc')">
                 <span class="sort-action_name">по цене</span>
                 <span class="sort-action_description">по убыванию</span>
               </div>

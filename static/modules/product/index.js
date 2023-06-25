@@ -2,6 +2,7 @@ async function Product(item){
     let productElement = document.createElement('div');
     productElement.className = "container"
     productElement.innerHTML = `
+      <link rel="stylesheet" href="../static/modules/product/style.css">
       <div class="item-card">
         <div class="item-image">
             <img src="../static/img/homeworks/${item.imgSrc}" alt="Фото товара">

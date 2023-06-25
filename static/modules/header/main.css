@@ -48,7 +48,6 @@ body {
 /* Header */
 
 .header {
-    padding-top: 46px;
     background-color: #F1F1F1;
 }
 
@@ -56,8 +55,7 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: flex-end;
-
-    margin-bottom: 76px;
+    padding: 46px 0;
 }
 
 .logo {
@@ -92,6 +90,7 @@ body {
     font-size: 14px;
 }
 
+
 .nav-button {
     display: none;
 }
@@ -107,8 +106,10 @@ body {
 /* Header content */
 
 .header-row {
-    display: flex;justify-content: space-between;
+    display: flex;
+    justify-content: space-between;
     column-gap: 30px;
+    padding-top: 20px;
 }
 
 .header-content {
