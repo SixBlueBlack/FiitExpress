@@ -1,7 +1,7 @@
 function ProductsListItem(item){
     let article = document.createElement('article');
-    article.classList.add("products__item", "item-product")
-    article.setAttribute("data-pid", "1")
+    article.classList.add("products__item", "item-product");
+    article.setAttribute("data-pid", "1");
     article.innerHTML = `
               <link rel="stylesheet" href="../static/components/productListItem/style.css">
               <div class="item-product__image _ibg">
@@ -22,7 +22,7 @@ function ProductsListItem(item){
                         <button class="white-btn">Подробнее</button>
                     </a>
                     <a href="" class="orange-btn_a">
-                      <button class="orange-btn">В корзину</button>
+                      <button data-cart class="orange-btn">В корзину</button>
                     </a>
                   </div>
                 </div>
