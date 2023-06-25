@@ -43,10 +43,10 @@
     padding: 0 10px;
 }
 
-
 #side-checkbox {
     display: none;
 }
+
 .side-panel {
     position: fixed;
     z-index: 5;
@@ -60,13 +60,13 @@
     color: black;
     padding: 40px 20px;
 }
+
 .side-title {
     font-size: 20px;
     padding-bottom: 10px;
     margin-bottom: 20px;
     border-bottom: 2px solid lightgrey;
 }
-
 
 .side-button-1 {
     display: flex;
@@ -81,8 +81,6 @@
     font-family: 'Poppins', sans-serif;
     cursor: pointer;
 }
-
-
 
 #side-checkbox:checked + .side-panel {
     left: 0;
