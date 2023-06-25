@@ -5,6 +5,7 @@ from flask import session
 from flask_login import UserMixin
 import data_base_mock
 import json
+from p import addUser
 
 app = Flask(__name__)
 app.secret_key = 'hello'
@@ -95,7 +96,15 @@ def get_products():
 def register_api():
     flogin = json.loads(request.data)['login']
     fpassword = json.loads(request.data)['password']
-    print(1)
+    fpassword2 = json.loads(request.data)['password2']
+    success = False
+    if flogin and fpassword and fpassword2 and fpassword == fpassword2:
+        addUser(flogin, fpassword)
+        usersDb.get_all()
+        user = usersDb.get_by_login(flogin)
+        login_user(user)
+        success = True
+    return {"success": success}
 
 
 @app.route('/api/logout')
