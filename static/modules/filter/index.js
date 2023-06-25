@@ -7,52 +7,44 @@ function Filter(){
     <link rel="stylesheet" href="../static/modules/filter/filter_style.css">
     <link rel="stylesheet" href="../static/modules/filter/category-filter.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+    <link href="https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css" rel="stylesheet">
     <script src="../static/modules/filter/script.js"></script>
 
 
       <div class="sort">
-        <div class="sort-item">
-          <span class="sort-item_title">Упорядочить:</span>
-          <div class="sort-action">
-            <div class="sort-action_header">
-              <span class="sort-action_current">по названию</span>
-              <span class="sort-action_description">A→Я</span>
-            </div>
-
-            <script type="text/javascript">
-              function sortToggle() {
-                $(document).on('click', '.sort-action_header',
-                        function () {
-                          $('.sort-action').removeClass('sort-action--active');
-                          $(this).parent().toggleClass('sort-action--active');
-                        })
-              }
-            </script>
-<!--            Сортировка-->
-            <div class="sort-action_body">
-              <div class="sort-action_item" onclick="RefreshProductsList('alphaAsc')">
-                <span class="sort-action_name">по названию</span>
-                <span class="sort-action_description">А→Я</span>
-              </div>
-
-              <div class="sort-action_item" onclick="RefreshProductsList('alphaDesc')">
-                <span class="sort-action_name">по названию</span>
-                <span class="sort-action_description">Я→А</span>
-              </div>
-
-              <div class="sort-action_item" onclick="RefreshProductsList('priceAsc')">
-                <span class="sort-action_name">по цене</span>
-                <span class="sort-action_description">по возрастанию</span>
-              </div>
-
-              <div class="sort-action_item" onclick="RefreshProductsList('priceDesc')">
-                <span class="sort-action_name">по цене</span>
-                <span class="sort-action_description">по убыванию</span>
-              </div>
-
-            </div>
-          </div>
+        <div class="sort-item select-menu sort-action">
+        <div class="select-btn">
+          <span class="sBtn-text">Упорядочить по</span>
+          <i class="bx bx-chevron-down btn-text-bx"></i>
         </div>
+
+        <ul class="options">
+          <li class="option">
+                <span class="option-text">
+                    <span class="sort-action_name">по названию</span>
+                    <span class="sort-action_description">А→Я</span>
+                </span>
+          </li>
+          <li class="option">
+                <span class="option-text">
+                    <span class="sort-action_name">по названию</span>
+                    <span class="sort-action_description">Я→А</span>
+                </span>
+          </li>
+          <li class="option">
+                <span class="option-text">
+                    <span class="sort-action_name">по цене</span>
+                    <span class="sort-action_description">по возрастанию</span>
+                </span>
+          </li>
+          <li class="option">
+                <span class="option-text">
+                    <span class="sort-action_name">по цене</span>
+                    <span class="sort-action_description">по убыванию</span>
+                </span>
+          </li>
+        </ul>
+      </div>
 
 
         <div class="sort-item">
@@ -135,11 +127,11 @@ function Filter(){
 
             <div class="sort-action_header side-button-1" >
 
-              <label for="side-checkbox">
-                <span class="side-b" id="filter_buttn">Фильтры</span>
-              </label>
+            <label for="side-checkbox">
+              <span class="select-btn side-b">Фильтры</span>
+            </label>
 
-            </div>
+          </div>
           </div>
         </div>
 
