@@ -28,7 +28,7 @@ async function ToCart(){
 		const productInfo = {
 			imgSrc: "../static/img/homeworks/" + currentProduct.imgSrc,
 			title: currentProduct.title,
-			price: currentProduct.price
+			price: currentProduct.price+"₽"
 		};
 		await postUserData(productInfo);
 }

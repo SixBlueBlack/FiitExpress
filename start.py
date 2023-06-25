@@ -236,6 +236,8 @@ def update_user_info_api():
 
 @app.route('/api/delete_user_info', methods=['POST'])
 def delete_user_info_api():
+    print(flask_login.current_user.data)
+    print(request.data.decode('utf-8'))
     flask_login.current_user.data.remove(request.data.decode('utf-8'))
     return []
 
