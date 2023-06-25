@@ -93,7 +93,7 @@
 }
 
 .list-items .item:hover {
-    background-color: #e7edfe;
+    background-color: rgba(255, 214, 69, 0.7);
 }
 
 .item .item-text {
