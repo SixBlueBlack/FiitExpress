@@ -14,10 +14,10 @@ function LoginForm() {
     <label for="psw"><b>Пароль</b></label>
     <input class="input" type="password" placeholder="Ваш пароль" name="password" required>
 
-    <input class="input" type="checkbox" checked ><label>Запомнить меня</label>
+    <input class="input" type="checkbox" checked id="rememberMe"><label>Запомнить меня</label>
     <hr>
 
-    <button type="button" class="registerbtn" onclick="Login(document.getElementsByName('login')[0].value, document.getElementsByName('password')[0].value)">Вход</button>
+    <button type="button" class="registerbtn" onclick="Login()">Вход</button>
   </div>
 
   <div class="container signin">
@@ -30,15 +30,20 @@ function LoginForm() {
     return div
 }
 
-async function Login(login, password){
+async function Login(){
+    // console.log(document.getElementById('rememberMe'))
     let answer = await fetch('/api/login', {
         method: 'POST',
-        body: JSON.stringify({login:login, password:password})
+        body: JSON.stringify({
+            login : document.getElementsByName('login')[0].value,
+            password : document.getElementsByName('password')[0].value,
+            rememberMe : document.getElementById('rememberMe').checked})
     })
-    let success = (await answer.json())['success'];
+    let js = (await answer.json())
+    let success = js['success'];
 
     if (success)
         window.location.replace('/');
     else
-        alert("Неверный пароль!")
+        alert(js['error'])
 }

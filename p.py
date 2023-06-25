@@ -2,7 +2,7 @@ from sqlalchemy import create_engine, Column, Integer, String, select, update
 from sqlalchemy.orm import declarative_base, Session
 from typing import List
 
-engine = create_engine('postgresql://postgres:12qwaszx3edc@localhost/fiitexpressdb1')
+engine = create_engine('postgresql://postgres:postgres@localhost/fiitexpressdb1')
 engine.connect()
 Base = declarative_base()
 session = Session(engine)

@@ -24,7 +24,7 @@ function CreateProductForm(){
              </select></p>
 
             <label for="dscr"><b>Описание товара/услуги</b></label>
-            <textarea placeholder="Enter Description" required></textarea>
+            <textarea placeholder="Enter Description" name="description" required></textarea>
 
             <label class="input-file">
                 <span class="input-file-text" type="text"></span>
@@ -33,9 +33,9 @@ function CreateProductForm(){
             </label>
 
             <label for="price"><b>Цена (в Рублях)</b></label>
-            <input type="text" placeholder="Enter Price" name="psw-repeat" required>
+            <input type="text" placeholder="Enter Price" name="price" required>
 
-            <button type="submit" class="registerbtn">Создать</button>
+            <button type="button" class="registerbtn" onclick="SendRequest()">Создать</button>
         </div>
 
     </form>
@@ -48,4 +48,41 @@ function CreateProductForm(){
     </script>`
 
     return div;
+}
+
+async function SendRequest(){
+    let input = document.querySelector('input[type="file"]');
+
+    let data = new FormData();
+    data.append('file', input.files[0])
+    data.append('name', document.getElementsByName('name')[0].value);
+
+    let answer1 = await fetch('/upload_file', {
+      method: 'POST',
+      body: data
+    })
+    let js1 = (await answer1.json())
+
+    if (!(js1['success'] === true)) {
+        alert(js1['error']);
+        return;
+    }
+
+    let answer = await fetch('/api/create_product', {
+        method: 'POST',
+        body: JSON.stringify({
+            name : document.getElementsByName('name')[0].value,
+            price : document.getElementsByName('price')[0].value,
+            category : document.getElementsByName('category-list')[0].value,
+            description : document.getElementsByName('description')[0].value,
+            picture_path : js1['filename']
+        })
+    })
+    let js = (await answer.json())
+    let success = js['success'];
+
+    if (success)
+        window.location.replace('/');
+    else
+        alert(js['error'])
 }

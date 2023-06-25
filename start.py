@@ -1,3 +1,6 @@
+import os
+
+from werkzeug.utils import secure_filename
 import flask_login
 from flask import Flask, render_template, request, url_for, redirect, flash
 from flask_login import LoginManager, login_user, logout_user
@@ -6,6 +9,8 @@ from flask_login import UserMixin
 import data_base_mock
 import json
 from p import addUser
+
+UPLOAD_FOLDER = '/path/to/the/uploads'
 
 app = Flask(__name__)
 app.secret_key = 'hello'
@@ -69,17 +74,48 @@ def load_user(user_id):
 
 @app.route('/api/login', methods=["POST"])
 def login_api():
-    # data = json.dumps(request.data)
+    print(request.data)
     flogin = json.loads(request.data)['login']
     fpassword = json.loads(request.data)['password']
+    frememberMe = json.loads(request.data)['rememberMe']
 
     success = False
+    error = ''
     if flogin and fpassword:
         user = usersDb.get_by_login(flogin)
         if user and user.check_password(fpassword):
-            login_user(user, remember=True)
+            login_user(user, remember=frememberMe)
             success = True
-    return {"success": success}
+        else:
+            error = "Неверное имя пользователя или пароль"
+    else:
+        error = "Введите имя пользователя и пароль"
+
+    return {"success": success, "error": error}
+
+
+@app.route('/api/register', methods=["POST"])
+def register_api():
+    print(request.data)
+    flogin = json.loads(request.data)['login']
+    fpassword = json.loads(request.data)['password']
+    fpassword2 = json.loads(request.data)['confirmPassword']
+    frememberMe = json.loads(request.data)['rememberMe']
+    success = False
+    error = ''
+    if flogin and fpassword and fpassword2:
+        if fpassword == fpassword2:
+            addUser(flogin, fpassword)
+            usersDb.get_all()
+            user = usersDb.get_by_login(flogin)
+            login_user(user)
+            success = True
+        else:
+            error = "Пароли не совпадают"
+    else:
+        error = "Пожалуйста, введите все данный"
+
+    return {"success": success, "error": error}
 
 
 @app.route('/api/get_products')
@@ -97,36 +133,55 @@ def get_products():
     return productsDp.get_products(int(lower_bound), int(upper_bound), categories)
 
 
-@app.route('/api/register', methods=["POST"])
-def register_api():
-    flogin = json.loads(request.data)['login']
-    fpassword = json.loads(request.data)['password']
-    fpassword2 = json.loads(request.data)['password2']
-    success = False
-    if flogin and fpassword and fpassword2 and fpassword == fpassword2:
-        addUser(flogin, fpassword)
-        usersDb.get_all()
-        user = usersDb.get_by_login(flogin)
-        login_user(user)
-        success = True
-    return {"success": success}
-
-
 @app.route('/api/logout')
 def logout():
     logout_user()
     return ""
 
 
-@app.route('/api/create_product')
+@app.route('/upload')
+def upload_get():
+    return render_template('upload.html')
+
+
+@app.route('/upload_file', methods=['POST'])
+def upload_post():
+    name = request.form.get('name')
+    if name == '':
+        return {"success": False, "error": "Не введено название"}
+    if 'file' not in request.files:
+        return {"success": False, "error": "Не передан файл"}
+    file = request.files['file']
+    if file.filename == '':
+        return {"success": False, "error": "Файл пустой"}
+
+    if file and allowed_file(file.filename):
+        file.save(os.curdir + '\\static\\img\\homeworks\\' + name + "." + file.filename.split('.')[-1])
+        return {"success": True, "error": "", "filename": name + "." + file.filename.split('.')[-1]}
+    return {"success": False, "error": "Произошла неизвестная ошибка"}
+
+
+def allowed_file(filename):
+    """ Функция проверки расширения файла """
+    return '.' in filename and \
+        filename.rsplit('.', 1)[1].lower() in {'png', 'jpg', 'jpeg'}
+    return render_template('upload.html')
+
+
+@app.route('/api/create_product', methods=['POST'])
 def create_product_api():
-    title = request.args.get('name')
-    price = int(request.args.get('psw-repeat'))
-    category = request.args.get('file')
-    description = request.args.get('description')
-    picture_path = request.args.get('file')
-    productsDp.create_product(title, price, category, picture_path, description)
-    return "Done"
+    title = json.loads(request.data)['name']
+    price = json.loads(request.data)['price']
+    category = json.loads(request.data)['category']
+    description = json.loads(request.data)['description']
+    picture_path = json.loads(request.data)['picture_path']
+
+    if title and price and category and description:
+        print(title, price, category, picture_path, description)
+        productsDp.create_product(title, price, category, picture_path, description)
+        return {"success": True}
+    else:
+        return {"success": False, "error": "Не все поля заполнены"}
 
 
 @app.route('/api/get_user_info')

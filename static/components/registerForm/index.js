@@ -16,12 +16,12 @@ function RegisterForm() {
     <input class="input" type="password" placeholder="Ваш пароль" name="password" required>
     
     <label for="psw"><b>Пароль</b></label>
-    <input class="input" type="password" placeholder="Повтор пароля" name="password2" required>
+    <input class="input" type="password" placeholder="Повтор пароля" name="confirmPassword" required>
 
-    <input class="input" type="checkbox" checked ><label>Запомнить меня</label>
+    <input class="input" type="checkbox" checked id="rememberMe"><label>Запомнить меня</label>
     <hr>
 
-    <button type="submit" class="registerbtn">Вход</button>
+    <button type="button" class="registerbtn" onclick="Register()">Вход</button>
   </div>
 
   <div class="container signin">
@@ -32,4 +32,23 @@ function RegisterForm() {
 </form>
 </div>`
     return div
+}
+
+async function Register(){
+    let answer = await fetch('/api/register', {
+        method: 'POST',
+        body: JSON.stringify({
+            login : document.getElementsByName('login')[0].value,
+            password : document.getElementsByName('password')[0].value,
+            confirmPassword : document.getElementsByName('confirmPassword')[0].value,
+            rememberMe : document.getElementById('rememberMe').checked})
+    })
+    let js = (await answer.json())
+    console.log(js)
+    let success = js['success'];
+
+    if (success)
+        window.location.replace('/');
+    else
+        alert(js['error'])
 }
