@@ -3,6 +3,7 @@ async function ShowMainPage() {
     document.body.prepend(await Header());
     document.getElementById('main-container').append(Filter())
     document.getElementById('main-container').append(await ProductsList());
+    await RefreshProductsList();
     // document.getElementById('side-menu-placeholder').prepend(FilterMenu());
 }
 
