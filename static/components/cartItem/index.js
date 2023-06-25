@@ -13,6 +13,8 @@ function CartItem() {
               <div class="counter-text" type="text" data-counter>1</div>
               <span class="up"  data-action="plus">+</span>
             </div>
+            <script type="text/javascript">
+            </script>
 
             <div class="cart_btn_area">
               <i>
