@@ -29,6 +29,12 @@ def header():
     return render_template('header.html')
 
 
+@app.route('/footer')
+def footer():
+    us = flask_login.current_user
+    return render_template('footer.html')
+
+
 @app.route('/create_product')
 def create_product():
     us = flask_login.current_user

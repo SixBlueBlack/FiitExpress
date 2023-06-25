@@ -14,7 +14,7 @@ async function Cart(){
     document.getElementById('cart_project').append(CartRightBar());
     // основное поле с покупкой и счетчиками
     document.getElementById('cart_shop').append(CartItem())
-
+    document.body.append(await Footer());
     console.log(document.querySelector('.cart-wrapper'));
     console.log(document.querySelector('.cart_project'));
     console.log(document.querySelector('.cart_shop'));

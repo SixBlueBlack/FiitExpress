@@ -1,7 +1,7 @@
 from sqlalchemy import create_engine, Column, Integer, String, select, update
 from sqlalchemy.orm import declarative_base, Session
 
-engine = create_engine('postgresql://postgres:12qwaszx3edc@localhost/fiitexpressdb1')
+engine = create_engine('postgresql://postgres:postgres@localhost/fiitexpressdb1')
 engine.connect()
 Base = declarative_base()
 session = Session(engine)
@@ -81,13 +81,13 @@ def updateProduct(_id: int, new_name: str):
 
 
 if __name__ == "__main__":
-    # Base.metadata.create_all(engine)
-    # addProduct("Питон", 300, 0, "python.jpg", "Pythonчик")
-    # addProduct("Оси", 250, 0, "osi.jpg")
-    # addProduct("Физкультура", 230, 1, "fizra.jpg")
-    # addProduct("Сети", 320, 0, "seti.jpg")
-    # addProduct("Дискретка по скидке", 100, 0, "Шур_ДМ.jpg")
-    # addUser("admin", "admin")
-    # addUser("user", "user")
-    print(int(None))
+    Base.metadata.create_all(engine)
+    addProduct("Питон", 300, 'Программирование', "python.jpg", "Pythonчик")
+    addProduct("Оси", 250, 'Комьютерные науки', "osi.jpg")
+    addProduct("Физкультура", 230, '}{уй', "fizra.jpg")
+    addProduct("Сети", 320, 'Биба', "seti.jpg")
+    addProduct("Дискретка по скидке", 100, 'Боба', "Шур_ДМ.jpg")
+    addUser("admin", "admin")
+    addUser("user", "user")
+    #print(int(None))
     pass
