@@ -10,7 +10,18 @@ function CreateProductForm(){
             <hr>
 
             <label for="item-name"><b>Название товара/услуги</b></label>
+
             <input type="text" placeholder="Enter Name Item" name="name" required>
+            
+            <label for="item-category"><b>Категория товара/услуги</b></label>
+            <p><select name="category-list" required>
+                 <option></option>
+                 <option>Высшая математика</option>
+                 <option>Ракетостроение</option>
+                 <option>Информационные технологии</option>
+                 <option>Программная инженерия</option>
+                 <option>Биатлон</option>
+             </select></p>
 
             <label for="dscr"><b>Описание товара/услуги</b></label>
             <textarea placeholder="Enter Description" required></textarea>
@@ -21,7 +32,7 @@ function CreateProductForm(){
                 <span class="input-file-btn">Выберите файл</span>
             </label>
 
-            <label for="price"><b>Цена</b></label>
+            <label for="price"><b>Цена (в Рублях)</b></label>
             <input type="text" placeholder="Enter Price" name="psw-repeat" required>
 
             <button type="submit" class="registerbtn">Создать</button>

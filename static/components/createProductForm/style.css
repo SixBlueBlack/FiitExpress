@@ -1,5 +1,5 @@
 form{
-    background-color: #dddddd;
+    background-color: transparent;
     height: 100%;
     margin: 0;
 }
@@ -7,7 +7,7 @@ form{
     height: 100%;
     padding: 0;
     margin: 0;
-    background-color: yellow;
+    background-color: #dddddd;
     width: 100%;
 }
 
@@ -20,7 +20,8 @@ form{
     box-sizing: border-box;
 }
 
-.container {
+
+form .container {
     padding-top: 50px;
     padding: 16px;
     background-color: white;
@@ -30,7 +31,8 @@ form{
 ;
 }
 
-input[type=text], input[type=password], textarea {
+
+form .container input[type=text], input[type=password], textarea {
     width: 100%;
     padding: 15px;
     margin: 5px 0 22px 0;
@@ -38,9 +40,20 @@ input[type=text], input[type=password], textarea {
     border: none;
     background: #f1f1f1;
 }
+select{
+    width: 100%;
+    padding: 15px;
+    margin: 5px 0 22px 0;
+    display: inline-block;
+    border: none;
+    background: #f1f1f1;
+}
+select > option:checked{
+    box-shadow: 0 0 10px 100px #fff inset;
+}
 
 
-textarea{
+form .container textarea{
     max-width: 100%;
     min-width: 100%;
     min-height: 200px;
@@ -48,17 +61,17 @@ textarea{
 }
 
 
-input[type=text]:focus, input[type=password]:focus {
+form .container input[type=text]:focus, input[type=password]:focus {
     background-color: #ddd;
     outline: none;
 }
 
-hr {
+form .container hr {
     border: 1px solid #f1f1f1;
     margin-bottom: 25px;
 }
 
-.registerbtn {
+form .container .registerbtn {
     background-color: black;
     color: white;
     padding: 16px 20px;
@@ -69,26 +82,26 @@ hr {
     opacity: 0.9;
 }
 
-.registerbtn:hover {
+form .container .registerbtn:hover {
     opacity: 1;
 }
 
-a {
+form .container a {
     color: dodgerblue;
 }
 
-.signin {
+form .container .signin {
     background-color: #f1f1f1;
     text-align: center;
 }
 
-.input-file {
+form .container .input-file {
     position: relative;
     display: inline-block;
     width: 100%;
     margin-bottom: 20px;
 }
-.input-file-text {
+form .container .input-file-text {
     padding: 0 10px;
     line-height: 40px;
     text-align: left;
@@ -100,7 +113,7 @@ a {
     border-radius: 6px 0px 0 6px;
     border: 1px solid #ddd;
 }
-.input-file-btn {
+form .container .input-file-btn {
     position: relative;
     display: inline-block;
     cursor: pointer;
@@ -120,7 +133,7 @@ a {
     margin: 0;
     transition: background-color 0.2s;
 }
-.input-file input[type=file] {
+form .container .input-file input[type=file] {
     position: absolute;
     z-index: -1;
     opacity: 0;
@@ -130,19 +143,19 @@ a {
 }
 
 /* Focus */
-.input-file input[type=file]:focus + .input-file-btn {
+form .container .input-file input[type=file]:focus + .input-file-btn {
     box-shadow: 0 0 0 0.2rem rgba(0,123,255,.25);
 }
 
 /* Hover/active */
-.input-file:hover .input-file-btn {
+form .container .input-file:hover .input-file-btn {
     background-color: #000000;
 }
-.input-file:active .input-file-btn {
+form .container .input-file:active .input-file-btn {
     background-color: #000;
 }
 
 /* Disabled */
-.input-file input[type=file]:disabled + .input-file-btn {
+form .container .input-file input[type=file]:disabled + .input-file-btn {
     background-color: #eee;
 }
