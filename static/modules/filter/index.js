@@ -73,12 +73,12 @@ function Filter(){
                       <div class="filters-price_inputs">
                         <label class="filters-price_label">
                           <span class="filters-price_text">от</span>
-                          <input type="number" min="0" max="9999" placeholder="0" class="filters-price_input">
+                          <input type="number" min="0" max="9999" placeholder="0" class="filters-price_input" id="lower_bound">
                           <span class="filters-price_text">₽</span>
                         </label>
                         <label class="filters-price_label">
                           <span class="filters-price_text">до</span>
-                          <input type="number" min="0" max="9999" placeholder="9999" class="filters-price_input">
+                          <input type="number" min="0" max="9999" placeholder="9999" class="filters-price_input" id="upper_bound">
                           <span class="filters-price_text">₽</span>
                         </label>
                       </div>
@@ -95,54 +95,37 @@ function Filter(){
                       </div>
 
                       <ul class="list-items">
-                        <li class="item">
+                        <li class="item" id="compSci">
                           <span class="checkbox">
                               <i class="fa-solid fa-check check-icon"></i>
                           </span>
-                          <span class="item-text">Алгоритмы</span>
+                          <span class="item-text">Компьютерные науки</span>
                         </li>
-                        <li class="item">
+                        <li class="item" id="prog">
                           <span class="checkbox">
                               <i class="fa-solid fa-check check-icon"></i>
                           </span>
                           <span class="item-text">Программирование</span>
                         </li>
-                        <li class="item">
-                          <span class="checkbox">
-                              <i class="fa-solid fa-check check-icon"></i>
-                          </span>
-                          <span class="item-text">Информационные технологии</span>
-                        </li>
-                        <li class="item">
+                        <li class="item" id="math">
                           <span class="checkbox">
                               <i class="fa-solid fa-check check-icon"></i>
                           </span>
                           <span class="item-text">Математика</span>
                         </li>
-                        <li class="item">
+                        <li class="item" id="etc">
                           <span class="checkbox">
                               <i class="fa-solid fa-check check-icon"></i>
                           </span>
-                          <span class="item-text">Гуманитарные предметы</span>
+                          <span class="item-text">Прочие предметы</span>
                         </li>
-                        <li class="item">
-                          <span class="checkbox">
-                              <i class="fa-solid fa-check check-icon"></i>
-                          </span>
-                          <span class="item-text">Физкультура</span>
-                        </li>
-                        <li class="item">
-                          <span class="checkbox">
-                              <i class="fa-solid fa-check check-icon"></i>
-                          </span>
-                          <span class="item-text">Другое</span>
-                        </li>
+                       
                       </ul>
                     </div>
 
                     <div class="filters_bar">
                         <div class="filters_bar_counter">Нашли 0 товаров</div>
-                        <a href="">Показать</a>
+                        <a onclick="ApplyFilters()">Показать</a>
                     </div>
 
                   </div>
@@ -164,4 +147,18 @@ function Filter(){
     </div>
     `
     return div;
+}
+
+function ApplyFilters(){
+    let categories = [];
+    let map = {
+        'compSci': "Компьютерные науки",
+        'math' : "Математика",
+        'etc' : "Прочие предметы",
+        'prog' : "Программирование"
+    }
+    for (let e of window.select_items){
+        categories.push(map[e])
+    }
+    RefreshProductsList('alphaAsc', categories.join(','), document.getElementById('lower_bound').value, document.getElementById('upper_bound').value)
 }

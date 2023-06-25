@@ -88,12 +88,17 @@ def get_products():
     lower_bound = request.args.get('lower_bound')
     upper_bound = request.args.get('upper_bound')
     category = request.args.get('category')
-    if lower_bound is None: lower_bound = 0
-    if upper_bound is None: upper_bound = 2147483647
+    print(category)
+    if not(category is None):
+        category = category.split(',')[0]
+    if lower_bound is None or lower_bound == 'null':
+        lower_bound = 0
+    if upper_bound is None or upper_bound == 'null':
+        upper_bound = 2147483647
     return productsDp.get_products(int(lower_bound), int(upper_bound), category)
 
 
-@app.route('/api/register')
+@app.route('/api/register', methods=["POST"])
 def register_api():
     flogin = json.loads(request.data)['login']
     fpassword = json.loads(request.data)['password']
