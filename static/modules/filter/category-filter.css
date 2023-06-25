@@ -58,27 +58,21 @@
 }
 
 
-@media screen and (max-height: 742px) {
+@media screen and (max-height: 600px) {
     .list-items {
-        height: 300px;
+        max-height: 160px;
     }
 }
 
-@media screen and (max-height: 665px) {
+@media screen and (max-height: 530px) {
     .list-items {
-        height: 200px;
+        max-height: 110px;
     }
 }
 
-@media screen and (max-height: 559px) {
+@media screen and (max-height: 480px) {
     .list-items {
-        height: 100px;
-    }
-}
-
-@media screen and (max-height: 459px) {
-    .list-items {
-        height: 50px;
+        max-height: 60px;
     }
 }
 
@@ -122,7 +116,7 @@
 
 
 .checkbox .check-icon {
-    color: #fff;
+    color: black;
     font-size: 11px;
     transform: scale(0);
     transition: all 0.3s ease-in-out;
