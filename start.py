@@ -5,6 +5,7 @@ from flask import session
 from flask_login import UserMixin
 import data_base_mock
 import json
+from p import addUser
 
 app = Flask(__name__)
 app.secret_key = 'hello'
@@ -45,7 +46,6 @@ def cart():
     return render_template('cart.html')
 
 
-
 @app.route('/product/<product_id>')
 def product(product_id):
     product = productsDp.get_by_id(product_id)
@@ -60,9 +60,6 @@ def login():
 @app.route('/register')
 def register():
     return render_template('register.html')
-
-
-# API
 
 
 @login_manager.user_loader
@@ -88,12 +85,27 @@ def login_api():
 
 @app.route('/api/get_products')
 def get_products():
-    return productsDp.get_all()
+    lower_bound = request.args.get('lower_bound')
+    upper_bound = request.args.get('upper_bound')
+    category = request.args.get('category')
+    if lower_bound is None: lower_bound = 0
+    if upper_bound is None: upper_bound = 2147483647
+    return productsDp.get_products(int(lower_bound), int(upper_bound), category)
 
 
 @app.route('/api/register')
 def register_api():
-    return "Not implemented"
+    flogin = json.loads(request.data)['login']
+    fpassword = json.loads(request.data)['password']
+    fpassword2 = json.loads(request.data)['password2']
+    success = False
+    if flogin and fpassword and fpassword2 and fpassword == fpassword2:
+        addUser(flogin, fpassword)
+        usersDb.get_all()
+        user = usersDb.get_by_login(flogin)
+        login_user(user)
+        success = True
+    return {"success": success}
 
 
 @app.route('/api/logout')
@@ -104,7 +116,13 @@ def logout():
 
 @app.route('/api/create_product')
 def create_product_api():
-    return "Not implemented"
+    title = request.args.get('name')
+    price = int(request.args.get('psw-repeat'))
+    category = request.args.get('file')
+    description = request.args.get('description')
+    picture_path = request.args.get('file')
+    productsDp.create_product(title, price, category, picture_path, description)
+    return "Done"
 
 
 @app.route('/api/get_user_info')
