@@ -12,7 +12,6 @@ body{
     display: inline-flex;
     margin-left: auto;
     margin-right: auto;
-
 }
 .item-image{
 
@@ -48,7 +47,7 @@ body{
     padding-bottom: 5px;
     margin-top: 5px;
 }
-.btn {
+.add-to-basket .btn {
     display: inline-block;
     padding: 8px 22px;
     margin-left: 50px;
@@ -75,25 +74,30 @@ body{
     top: 1px;
     background-color: #000000;
 }
-@media (max-width: 800px) {
+@media (max-width: 1080px) {
     .item-card{
         flex-direction: column;
+        align-items: center;
+    }
+    .item-image{
+        width: 80%;
+    }
+    .info{
+        width: 100%;
+        flex-direction: column;
+        align-items: center;
+
     }
     .add-to-basket{
         flex-direction: column;
+        align-items: center;
+        width: 100%;
     }
-    .btn{
-        padding: 24px 15px;
-        font-size: 10px;
-        text-align: center;
+
+    .add-to-basket .btn{
+        margin-left: 0;
+
     }
 }
 
 
-@media (max-width: 1080px) {
-    .btn{
-        padding: 10px 15px;
-        font-size: 13px;
-        text-align: center;
-    }
-}

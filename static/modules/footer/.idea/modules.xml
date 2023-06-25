@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/FiitExpress.iml" filepath="$PROJECT_DIR$/.idea/FiitExpress.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/footer.iml" filepath="$PROJECT_DIR$/.idea/footer.iml" />
     </modules>
   </component>
 </project>

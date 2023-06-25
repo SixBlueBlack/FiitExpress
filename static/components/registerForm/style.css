@@ -22,7 +22,7 @@ body {
 .containerl {
     padding-top: 50px;
     padding: 16px;
-    background-color: white;
+    background-color: black;
     max-width: 530px;
     margin-left: auto;
     margin-right: auto;
@@ -44,7 +44,7 @@ body {
 }
 
 hr {
-    border: 1px solid #f1f1f1;
+    border: 1px solid yellow;
     margin-bottom: 25px;
 }
 

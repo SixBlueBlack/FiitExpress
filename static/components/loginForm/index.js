@@ -18,11 +18,12 @@ function LoginForm() {
     <hr>
 
     <button type="button" class="registerbtn" onclick="Login(document.getElementsByName('login')[0].value, document.getElementsByName('password')[0].value)">Вход</button>
-  </div>
-
-  <div class="container signin">
+     <div class="container signin">
     <p>Нет аккаунта? <a class="al" href="/register">Регистрация</a>.</p>
   </div>
+  </div>
+
+ 
 
 
 </form>

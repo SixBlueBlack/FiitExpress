@@ -44,9 +44,6 @@
         position: fixed;
     }
 
-	.header-nav {
-		margin-bottom: 50px;
-	}
 
 	.header-row {
 		flex-direction: column;
