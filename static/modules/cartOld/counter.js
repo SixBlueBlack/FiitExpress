@@ -13,27 +13,20 @@ window.addEventListener('click', async function (event) {
 
 	if (event.target.dataset.action === 'minus') {
 
-		if (parseInt(counter.innerText) > 0) {
+		if (parseInt(counter.innerText) > 1) {
 			counter.innerText = --counter.innerText;
 		}
-
-		const cardBox = event.target.closest('.cart_box');
-
-		if (parseInt(counter.innerText) === 0) {
-			const productInfo = {
+	}
+	const cardBox = event.target.closest('.cart_box');
+	if (event.target.dataset.action === 'trash_bin') {
+		const productInfo = {
 				imgSrc: cardBox.querySelector('.product-img').getAttribute('src'),
 				title: cardBox.querySelector('.cart_content__title').innerText,
 				price: cardBox.querySelector('.cart_content__price').innerText
 			};
 
-			// console.log(cardBox);
-            // console.log(productInfo['imgSrc']);
-            // console.log(productInfo['title']);
-            // console.log(productInfo["price"]);
-
 			await deleteUserData(productInfo);
 			cardBox.remove();
-		}
 	}
 	calcCartPriceAndDelivery();
 });
