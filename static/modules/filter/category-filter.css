@@ -32,10 +32,9 @@
     display: flex;
     height: 21px;
     width: 21px;
-    color: #fff;
+    color: black;
     font-size: 14px;
     border-radius: 50%;
-    background: #6e93f7;
     align-items: center;
     justify-content: center;
     transition: 0.3s;
@@ -53,8 +52,36 @@
     background-color: #fff;
     box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
     display: none;
-    background:red;
+    width: 320px;
+    margin-left: -30px;
+    overflow-y: scroll;
 }
+
+
+@media screen and (max-height: 742px) {
+    .list-items {
+        height: 300px;
+    }
+}
+
+@media screen and (max-height: 665px) {
+    .list-items {
+        height: 200px;
+    }
+}
+
+@media screen and (max-height: 559px) {
+    .list-items {
+        height: 100px;
+    }
+}
+
+@media screen and (max-height: 459px) {
+    .list-items {
+        height: 50px;
+    }
+}
+
 
 .select-btn.open ~ .list-items {
     display: block;
@@ -93,10 +120,6 @@
     transition: all 0.3s ease-in-out;
 }
 
-.item.checked .checkbox {
-    background-color: #4070f4;
-    border-color: #4070f4;
-}
 
 .checkbox .check-icon {
     color: #fff;

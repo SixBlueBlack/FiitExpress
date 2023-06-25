@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
 
 
+
 .sub-category_main > * {
     margin: 15px 0;
 }
@@ -26,11 +27,11 @@
 
 .sort-item {
     align-items: center;
-    border-right: 1px solid #f2f2f2;
     display: flex;
     font-size: 14px;
     line-height: 16px;
     padding: 15px 20px;
+
 }
 
 .sort-item > *:not(:last-child) {
@@ -41,70 +42,67 @@
     position: relative;
 }
 
-.sort-action.sort-action--active .sort-action_body {
-    display: block;
-}
 
-.sort-action_header {
-    cursor: pointer;
-}
 
-.sort-action_current {
-    align-items: center;
-    color: black;
+.select-menu .select-btn {
     display: flex;
-    font-family: 'Poppins', sans-serif;
+    padding: 20px;
+    font-size: 14px;
+    font-weight: 400;
+    align-items: center;
+    cursor: pointer;
+    justify-content: space-between;
 }
 
-.sort-action_current:after {
-    content: '';
-    border-color: black transparent transparent transparent;
-    border-style: solid;
-    border-width: 5px 5px 0 5px;
-    display: block;
-    margin-left: 5px;
-    height: 0;
-    width: 0;
-}
+.select-menu .options {
 
-.sort-action_body {
-    background-color: white;
+    position: absolute;
+    margin-top: 3px;
     border-radius: 4px;
-    box-shadow: 0 0 30px 0 rgba(0, 0, 0, 0.2);
+    background: #fff;
+    display: none;
+
+    box-shadow: 0 0 30px 0 rgba(0, 0, 0, 0.1);
     left: -10px;
     overflow: hidden;
-    position: absolute;
     top: calc(100% + 10px);
     width: 205px;
-    z-index: 3;
+    z-index: 5;
+
 }
 
-.sort-action_item {
-    align-items: center;
-    background-color: white;
-    cursor: pointer;
+.select-menu.active .options {
+    display: block;
+}
+
+.options .option {
     display: flex;
-    font-family: 'Poppins', sans-serif;
+    height: 30px;
+    cursor: pointer;
+    padding: 0 16px;
+    border-radius: 4px;
+    align-items: center;
+    background: #fff;
+}
+
+.options .option:hover {
+    background: rgb(255, 214, 69);
+}
+
+.option .option-text {
     font-size: 14px;
-    line-height: 18px;
-    padding: 6px 15px;
-}
-
-.sort-action_item > *:not(:last-child) {
-    margin-right: 5px;
-}
-
-.sort-action_item:hover {
-    background-color: rgb(255, 214, 69);
+    color: #333;
 }
 
 .sort-action_description {
     color: #bababa;
 }
 
+.select-btn .btn-text-bx {
+    font-size: 25px;
+    transition: 0.3s;
+}
 
-
-
-
-
-
+.select-menu.active .select-btn .btn-text-bx {
+    transform: rotate(-180deg);
+}

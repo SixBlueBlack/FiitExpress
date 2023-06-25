@@ -17,9 +17,9 @@ class Products:
         fields.pop('_sa_instance_state')
         return fields
 
-    def get_products(self, lower_bound: int, upper_bound: int, category: str) -> List[Dict[str, Any]]:
-        if category is not None:
-            return self.get_products_by_category_and_price(category, lower_bound, upper_bound)
+    def get_products(self, lower_bound: int, upper_bound: int, categories: List[str]) -> List[Dict[str, Any]]:
+        if categories[0] != "all":
+            return self.get_products_by_category_and_price(categories, lower_bound, upper_bound)
         if lower_bound != 0 or upper_bound != 2147483647:
             return self.get_products_by_price(lower_bound, upper_bound)
         else:
@@ -31,10 +31,10 @@ class Products:
             result.append(self.get_dict(elem))
         return result
 
-    def get_products_by_category_and_price(self, category: str, lower_bound: int, upper_bound: int) \
+    def get_products_by_category_and_price(self, categories: List[str], lower_bound: int, upper_bound: int) \
             -> List[Dict[str, Any]]:
         result = []
-        for elem in select_products_by_category_and_price(category, lower_bound, upper_bound):
+        for elem in select_products_by_category_and_price(categories, lower_bound, upper_bound):
             result.append(self.get_dict(elem))
         return result
 
