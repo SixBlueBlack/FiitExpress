@@ -57,17 +57,17 @@ async function IndexBlock(){
 
             <div class="project" data-aos="flip-up">
                 <img src="../static/img/portfolio/01.jpg" alt="Online fashion store" class="project-img">
-                <h3 class="project-title"><a href="">Поможем закрыть курс по дизайну</a></h3>
+                <h3 class="project-title"><a href="/products">Поможем закрыть курс по дизайну</a></h3>
             </div>
 
             <div class="project" data-aos="flip-up">
                 <img src="../static/img/portfolio/02.jpg" alt="Reebok Store" class="project-img">
-                <h3 class="project-title"><a href="#!">Программируем вместе</a></h3>
+                <h3 class="project-title"><a href="/register">Программируем вместе</a></h3>
             </div>
 
             <div class="project" data-aos="flip-up">
                 <img src="../static/img/portfolio/03.jpg" alt="Braun Landing Page" class="project-img">
-                <h3 class="project-title"><a href="#!">Репетиторство от работников IT-компаний</a></h3>
+                <h3 class="project-title"><a href="/tutors">Репетиторство от работников IT-компаний</a></h3>
             </div>
 
         </div>
