@@ -5,6 +5,8 @@ from flask import Flask, render_template, request
 from flask_login import LoginManager, login_user, logout_user
 from db import data_base
 import json
+
+from db.communcation_mail import send_email
 from db.utils import add_user
 
 UPLOAD_FOLDER = '/path/to/the/uploads'
@@ -199,6 +201,13 @@ def create_product_api():
 @app.route('/api/get_user_info')
 def get_user_info_api():
     return flask_login.current_user.json
+
+
+@app.route('/api/send')
+def send_message_api():
+    user = flask_login.current_user.json
+    send_email(user, usersDb, productsDp)
+    return ""
 
 
 @app.route('/api/update_user_info', methods=['POST'])

@@ -12,7 +12,7 @@ function CartRightBar(){
       </div>
     </p>
 
-    <a href=""><i class="fa fa-shopping_cart"></i>Оформить</a>
+    <a data-action="checkout"><i class="fa fa-shopping_cart" ></i>Оформить</a>
     `
     return div
 }
