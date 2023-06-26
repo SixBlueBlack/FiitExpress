@@ -9,6 +9,7 @@ async function CartItem(usersProductData) {
           <div class="cart_content">
             <h3 class="cart_content__title">${usersProductData["title"]}</h3>
             <div class="cart_content__price">${usersProductData["price"]}</div>
+            <div hidden class="cart_id">${usersProductData["id"]}</div>
 
             <div class="counter">
               <span class="down" data-action="minus">-</span>

@@ -22,6 +22,7 @@ window.addEventListener('click', async function (event) {
 	if (event.target.dataset.action === 'trash_bin') {
 
 		const productInfo = {
+				id: cardBox.querySelector('.cart_id').innerText,
 				imgSrc: cardBox.querySelector('.product-img').getAttribute('src'),
 				title: cardBox.querySelector('.cart_content__title').innerText,
 				price: cardBox.querySelector('.cart_content__price').innerText
@@ -30,14 +31,14 @@ window.addEventListener('click', async function (event) {
         await deleteUserData(productInfo);
         cardBox.remove();
 
-	    if (userInfo['data'].length === 0){
+	    if (userInfo['data'].length === 1){
 	        await ProductUpdate();
 	    }
 	}
 
 	if(event.target.dataset.action === 'checkout' && userInfo['data'].length !== 0){
+		alert("Заказ оформлен. Проверьте свою почту.");
 		await PurchaseOrderProcessing();
-		alert("Zasel");
 	}
 
 	calcCartPriceAndDelivery();

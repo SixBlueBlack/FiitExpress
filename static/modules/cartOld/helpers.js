@@ -17,19 +17,3 @@ function calcCartPriceAndDelivery() {
 	totalPriceEl.innerText = priceTotal;
     cartWrapper.querySelector('.cart_counter').innerText = `Товары, ${amountProducts} шт.`;
 }
-
-function toggleCartStatus() {
-
-    const cartWrapper = document.querySelector('.cartOld-wrapper');
-    const cartEmptyBadge = document.querySelector('[data-cartOld-empty]');
-    const orderForm = document.querySelector('#order-form');
-
-    if (cartWrapper.children.length > 0) {
-        cartEmptyBadge.classList.add('none');
-        orderForm.classList.remove('none');
-    } else {
-        cartEmptyBadge.classList.remove('none');
-        orderForm.classList.add('none');
-    }
-
-}
