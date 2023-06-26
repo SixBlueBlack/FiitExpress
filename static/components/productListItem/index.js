@@ -12,8 +12,9 @@ function ProductsListItem(item){
                   <h5 class="item-product__title">${item.title}</h5>
                 </div>
                 <div class="item-product__prices">
-                  <div class="item-product__price ">${item.price}₽</div>
+                  <div class="item-product__price ">${item.price}₽ </div>
                 </div>
+                <div hidden class="item-product__id">${item.id}</div>
                 <div class="item-product__actions actions-product">
                   <div class="actions-product__body">
                     <a href="/product/${item.id}"  class="white-btn_a">

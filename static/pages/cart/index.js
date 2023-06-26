@@ -13,13 +13,8 @@ async function Cart(){
     document.getElementById('cart_project').append(CartRightBar());
 
     await ProductUpdate();
-    // основное поле с покупкой и счетчиками
-    document.body.append(await Footer());
 
-    console.log(document.querySelector('.cart-wrapper'));
-    console.log(document.querySelector('.cart_project'));
-    console.log(document.querySelector('.cart_shop'));
-    // console.log(GetProductInfo());
+    document.body.append(await Footer());
 
     const nav = document.querySelector('#nav');
     const navBtn = document.querySelector('#nav-btn');
@@ -44,10 +39,9 @@ async function ProductUpdate(){
     }
     if (userInfo['data'].length > 0) {
         for (let i = 0; i < userInfo['data'].length; i++){
-       const userData = userInfo['data'][i];
-       usersProductData = JSON.parse(userData)["productInfo"];
-       console.log(usersProductData);
-       document.getElementById('cart_shop').append(await CartItem(usersProductData))
+           const userData = userInfo['data'][i];
+           usersProductData = JSON.parse(userData)["productInfo"];
+           document.getElementById('cart_shop').append(await CartItem(usersProductData))
         }
     }
 

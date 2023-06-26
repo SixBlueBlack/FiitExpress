@@ -69,7 +69,8 @@ class UserCommon:
         return json.dumps({
             'is_anonymous': self.is_anonymous,
             'login': self.login,
-            'data': self.data
+            'data': self.data,
+            'mail': self.mail
         })
 
     def set_password(self, password: str) -> None:

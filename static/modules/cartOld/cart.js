@@ -4,11 +4,11 @@ window.addEventListener('click', async function (event) {
 		const card = event.target.closest('.item-product');
 
 		const productInfo = {
+			id: card.querySelector('.item-product__id').innerText,
 			imgSrc: card.querySelector('.product-img').getAttribute('src'),
 			title: card.querySelector('.item-product__title').innerText,
 			price: card.querySelector('.item-product__price ').innerText
 		};
-
 		await postUserData(productInfo);
 	}
 });

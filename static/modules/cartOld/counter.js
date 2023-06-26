@@ -18,6 +18,7 @@ window.addEventListener('click', async function (event) {
 		}
 	}
 	const cardBox = event.target.closest('.cart_box');
+	let userInfo = await getUserInfo();
 	if (event.target.dataset.action === 'trash_bin') {
 
 		const productInfo = {
@@ -29,10 +30,14 @@ window.addEventListener('click', async function (event) {
         await deleteUserData(productInfo);
         cardBox.remove();
 
-        let userInfo = await getUserInfo();
 	    if (userInfo['data'].length === 0){
 	        await ProductUpdate();
 	    }
+	}
+
+	if(event.target.dataset.action === 'checkout' && userInfo['data'].length !== 0){
+		await PurchaseOrderProcessing();
+		alert("Zasel");
 	}
 
 	calcCartPriceAndDelivery();
@@ -48,4 +53,8 @@ async function deleteUserData(productInfo){
 async function getUserInfo(){
     let userInfoPromise = await fetch("/api/get_user_info")
     return userInfoPromise.json()
+}
+
+async function PurchaseOrderProcessing(){
+    await fetch("/api/send");
 }
